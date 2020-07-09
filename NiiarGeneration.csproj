@@ -52,6 +52,12 @@
     </Compile>
     <Compile Include="ApplicatDbContext.cs" />
     <Compile Include="DBInitializer.cs" />
+    <Compile Include="ApplicatEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicatEditForm.Designer.cs">
+      <DependentUpon>ApplicatEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Applicat.cs" />
     <Compile Include="Models\TypeApplicat.cs" />
     <Compile Include="Models\Vehincle.cs" />
@@ -87,6 +93,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ApplicateListForm.resx">
       <DependentUpon>ApplicateListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ApplicatEditForm.resx">
+      <DependentUpon>ApplicatEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TitleForm.resx">
       <DependentUpon>TitleForm.cs</DependentUpon>

@@ -32,6 +32,7 @@
             this.dgApplications = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btAddApplicat = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgApplications)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,11 +45,13 @@
             this.dgApplications.Name = "dgApplications";
             this.dgApplications.Size = new System.Drawing.Size(800, 450);
             this.dgApplications.TabIndex = 0;
+            this.dgApplications.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplications_CellContentClick);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btAddApplicat});
+            this.btAddApplicat,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -57,11 +60,22 @@
             // 
             // btAddApplicat
             // 
+            this.btAddApplicat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.btAddApplicat.Image = ((System.Drawing.Image)(resources.GetObject("btAddApplicat.Image")));
             this.btAddApplicat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btAddApplicat.Name = "btAddApplicat";
-            this.btAddApplicat.Size = new System.Drawing.Size(117, 22);
+            this.btAddApplicat.Size = new System.Drawing.Size(101, 22);
             this.btAddApplicat.Text = "Добавить заявку";
+            this.btAddApplicat.Click += new System.EventHandler(this.btAddApplicat_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(89, 22);
+            this.toolStripButton1.Text = "Строка заявки";
             // 
             // ApplicateListForm
             // 
@@ -85,5 +99,6 @@
         private System.Windows.Forms.DataGridView dgApplications;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btAddApplicat;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

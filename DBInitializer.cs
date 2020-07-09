@@ -9,7 +9,7 @@ using NiiarGeneration.Models;
 
 namespace NiiarGeneration
 {
-    public class DBInitializer : DropCreateDatabaseAlways<ApplicatDbContext>//: DropCreateDatabaseIfModelChanges<ApplicatDbContext>
+    public class DBInitializer : DropCreateDatabaseIfModelChanges<ApplicatDbContext>
     {
         protected override void Seed(ApplicatDbContext dbContext)
         {
@@ -39,7 +39,8 @@ namespace NiiarGeneration
 
             IList<ApplicatItem> applicatItems = new List<ApplicatItem>
             {
-                new ApplicatItem {Applicat = applicats[0],Description_Work = "Покататься",}
+                new ApplicatItem {Applicat = applicats[0],Description_Work = "Покататься",Delivery_Address = "Курчатова 40",Responsible_Customer = "Махмутов Игорь Леонтьевич", Vehicle =vehincles[0]  },
+                new ApplicatItem {Applicat = applicats[1],Description_Work = "Транспортировка груза",Delivery_Address = "Октябрьская",Responsible_Customer = "Богатырёв Анатолий Сергеевич", Vehicle =vehincles[1]  }
             };
 
             dbContext.ApplicatItems.AddRange(applicatItems);
