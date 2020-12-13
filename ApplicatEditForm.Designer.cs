@@ -42,9 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgApplicat)).BeginInit();
             this.SuspendLayout();
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // tbId
             // 

@@ -18,6 +18,7 @@ namespace NiiarGeneration
         {
            var repository = new Repository();
           //var applicate = reposirory.ApplicatGetList();
+          //var applicate = reposirory.ApplicatGetList();
            // Repository repository = new Repository("Server=localHost\\SQLEXPRESS;Integrated Security=True;Initial Catalog=NIIAR-GENERATION");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

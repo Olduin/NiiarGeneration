@@ -37,16 +37,6 @@
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgApplications
-            // 
-            this.dgApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgApplications.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgApplications.Location = new System.Drawing.Point(0, 0);
-            this.dgApplications.Name = "dgApplications";
-            this.dgApplications.Size = new System.Drawing.Size(800, 450);
-            this.dgApplications.TabIndex = 0;
-            this.dgApplications.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplications_CellContentClick);
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -76,6 +66,17 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(89, 22);
             this.toolStripButton1.Text = "Строка заявки";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // dgApplications
+            // 
+            this.dgApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgApplications.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgApplications.Location = new System.Drawing.Point(0, 0);
+            this.dgApplications.Name = "dgApplications";
+            this.dgApplications.Size = new System.Drawing.Size(800, 450);
+            this.dgApplications.TabIndex = 0;
+            this.dgApplications.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplications_CellContentClick);
             // 
             // ApplicateListForm
             // 
