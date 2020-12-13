@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using NiiarGeneration.Models;
+using System.Data.Entity;
 
 namespace NiiarGeneration
 {
@@ -19,7 +20,25 @@ namespace NiiarGeneration
 
         public IList<Applicat> ApplicatGetList() 
         {
-            return applicatDbContext.Applicats.ToList();
-        }       
+            return applicatDbContext.Applicats.AsNoTracking().ToList();
+        }   
+        
+        public Applicat ApplicatGet(long id)
+        {
+            return applicatDbContext.Applicats.AsNoTracking().FirstOrDefault(ac => ac.Id == id);
+        }
+
+        public void ApplicateAdd(Applicat applicat)
+        {
+            applicatDbContext.Applicats.Add(applicat);
+            applicatDbContext.SaveChanges();
+        }
+
+        public void ApplicateSave(Applicat applicat) 
+        {
+            applicatDbContext.Applicats.Attach(applicat);
+            applicatDbContext.Entry(applicat).State = EntityState.Modified;
+            applicatDbContext.SaveChanges();
+        }
     }
 }

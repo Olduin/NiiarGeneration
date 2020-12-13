@@ -12,9 +12,16 @@ namespace NiiarGeneration.Models
     public class Applicat
     {
         [Key]
+        [Display(Name = "№")]
         public int Id { get; set; }
+
+        [Display(Name = "Дата")]
         public DateTime Date{ get; set; }
+
+        [Display(Name = "Тип заявки")]
         public TypeApplicat Type{ get; set; }
+
+        [Display(Name = "Список")]
         public virtual List<ApplicatItem> ApplicatItems{ get; set; }
         
     }   

@@ -48,6 +48,7 @@
             this.dgApplications.Name = "dgApplications";
             this.dgApplications.Size = new System.Drawing.Size(988, 502);
             this.dgApplications.TabIndex = 0;
+            this.dgApplications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplications_CellContentClick);
             // 
             // toolStrip1
             // 
