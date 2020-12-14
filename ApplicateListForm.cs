@@ -26,7 +26,7 @@ namespace NiiarGeneration
         {
             Applicat applicat = new Applicat();
 
-            using (ApplicatEditForm editApplicatForm = new ApplicatEditForm(applicat))
+            using (ApplicatItemsForm editApplicatForm = new ApplicatItemsForm(applicat))
             {
                 editApplicatForm.ShowDialog();
 
@@ -45,7 +45,7 @@ namespace NiiarGeneration
 
             Applicat applicat = repository.ApplicatGet(id);
 
-            using (ApplicatEditForm editApplicatForm = new ApplicatEditForm(applicat))
+            using (ApplicatItemsForm editApplicatForm = new ApplicatItemsForm(applicat))
             {
                 editApplicatForm.ShowDialog();
 
