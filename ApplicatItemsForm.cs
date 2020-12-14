@@ -11,11 +11,11 @@ using NiiarGeneration.Models;
 
 namespace NiiarGeneration
 {
-    public partial class ApplicatEditForm : Form
+    public partial class ApplicatItemsForm : Form
     {
         Applicat applicat;
 
-        public ApplicatEditForm(Applicat applicat)
+        public ApplicatItemsForm(Applicat applicat)
         {
             this.applicat = applicat;
             InitializeComponent();
