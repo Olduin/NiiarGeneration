@@ -1,6 +1,6 @@
 ﻿namespace NiiarGeneration
 {
-    partial class ApplicatEditForm
+    partial class ApplicatItemsForm
     {
         /// <summary>
         /// Required designer variable.
