@@ -19,7 +19,7 @@ namespace NiiarGeneration.Models
         public DateTime Date{ get; set; }
 
         [Display(Name = "Тип заявки")]
-        public TypeApplicat Type{ get; set; }
+        public virtual TypeApplicat Type { get; set; }
 
         [Display(Name = "Список")]
         public virtual List<ApplicatItem> ApplicatItems{ get; set; }

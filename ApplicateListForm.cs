@@ -14,6 +14,7 @@ namespace NiiarGeneration
     public partial class ApplicateListForm : Form
     {
         private Repository repository;
+        private ApplicatDbContext applicatDbContext;
 
         public ApplicateListForm(Repository repository)
         {
@@ -22,46 +23,57 @@ namespace NiiarGeneration
             this.dgApplications.DataSource = repository.ApplicatGetList();
         }
 
-        private void btAddApplicat_Click(object sender, EventArgs e)
-        {
-            Applicat applicat = new Applicat();
-
-            using (ApplicatItemsForm editApplicatForm = new ApplicatItemsForm(applicat))
-            {
-                editApplicatForm.ShowDialog();
-
-                if( editApplicatForm.DialogResult == DialogResult.OK)
-                {
-                    repository.ApplicateAdd(applicat);
-                }
-            }
-        }
-
+        
         private void dgApplications_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dgApplications.Rows[e.RowIndex];
 
             long id = Convert.ToInt64(row.Cells[0].Value.ToString());
 
-            Applicat applicat = repository.ApplicatGet(id);
+            ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
+            
+            applicationEditContext.Applicat = repository.ApplicatGet(id);
 
-            using (ApplicatItemsForm editApplicatForm = new ApplicatItemsForm(applicat))
+            using (ApplicatItemsForm editApplicatForm = new ApplicatItemsForm(applicationEditContext))
             {
                 editApplicatForm.ShowDialog();
 
                 if (editApplicatForm.DialogResult == DialogResult.OK)
                 {
-                    repository.ApplicateSave(applicat);
+                    repository.ApplicateSave(applicationEditContext.Applicat);
                 }
             }
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void btAddApplicat_Click_1(object sender, EventArgs e)
         {
+            ApplicatEditContext applicatEditContext = new ApplicatEditContext(repository);
 
+            applicatEditContext.Applicat = new Applicat();
+                       
+            using (ApplicatItemsForm ApplicatItemsForm = new ApplicatItemsForm(applicatEditContext))
+            {
+                ApplicatItemsForm.ShowDialog();
+
+                if (ApplicatItemsForm.DialogResult == DialogResult.OK)
+                {
+                    repository.ApplicateAdd(applicatEditContext.Applicat);
+                }
+            }
         }
 
+
+
+        /* private void OpenApplicatEditForm(ApplicatItem applicatItem)
+         {
+             ApplicationEditContext applicationEditContext = new ApplicationEditContext
+             {
+                 ApplicatItems = applicatItem;}
+                 //Vehincles = 
+                 //VehinlesRepository.GetVehincles();
+             }
+         */
     }
 }
 

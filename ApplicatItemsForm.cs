@@ -13,24 +13,24 @@ namespace NiiarGeneration
 {
     public partial class ApplicatItemsForm : Form
     {
-        Applicat applicat;
-
-        public ApplicatItemsForm(Applicat applicat)
+        private ApplicatEditContext applicatEditContext;        
+        
+        public ApplicatItemsForm(ApplicatEditContext applicatEditContext)
         {
-            this.applicat = applicat;
+            this.applicatEditContext = applicatEditContext;
             InitializeComponent();
 
-            tbId.DataBindings.Add("Text", applicat, "Id");
+            tbId.DataBindings.Add("Text", applicatEditContext.Applicat, "Id");
 
-            mkApplicate.DataBindings.Add("Text", applicat, "Date");
+            mkApplicate.DataBindings.Add("Text", applicatEditContext.Applicat, "Date");
 
-            cbTypeApplicate.DisplayMember = "тип";
+            cbTypeApplicate.DisplayMember = "Name";
             cbTypeApplicate.ValueMember = "Id";
-            cbTypeApplicate.DataSource = applicat.Type;
+            cbTypeApplicate.DataSource = applicatEditContext.Types;
 
 
 
-            this.dgApplicat.DataSource = applicat.ApplicatItems;
+            this.dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
         }
 
         
@@ -44,6 +44,29 @@ namespace NiiarGeneration
             Close();
         }
 
-       
+        
+        private void dgApplicat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                        
+            ApplicateEditForm applicateEditForm = new ApplicateEditForm(applicatEditContext, e.RowIndex);
+            applicateEditForm.ShowDialog();
+
+        }
+
+        private void btAddItem_Click(object sender, EventArgs e)
+        {
+            /*ApplicatItem applicatItem = new ApplicatItem();
+                        ApplicateEditForm applicateEditForm = new ApplicateEditForm(applicatEditContext);
+                        applicateEditForm.ShowDialog();
+                        */
+
+            applicatEditContext.Applicat.ApplicatItems.Add(new ApplicatItem());
+            
+        }
+
+        private void cbTypeApplicate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            applicatEditContext.Applicat.Type = cbTypeApplicate.SelectedItem as TypeApplicat;
+        }
     }
 }

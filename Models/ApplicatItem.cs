@@ -17,6 +17,8 @@ namespace NiiarGeneration.Models
         [DisplayName ("№п.п.")]
         public int Id { get; set; }
 
+       // [DisplayName("Гос.Номер")]
+        //public virtual Vehincle ... { get; set; }
 
         public Applicat Applicat { get; set; }
 
@@ -26,16 +28,16 @@ namespace NiiarGeneration.Models
         [DisplayName("Наименование транспорта и спецтехники")]
         public Vehincle Vehicle { get; set; }
 
-        [Display(Name = "Описание проводимых работ")]
+        [DisplayName("Описание проводимых работ")]
         public string Description_Work { get; set; }
 
-        [Display(Name = "Время подачи техники")]
-        public DateTime? Time_Of_Filingr { get; set; }
+        [DisplayName("Время подачи техники")]
+        public DateTime? Time_Of_Filing { get; set; }
 
-        [Display(Name = "Продолжительность использования")]
-        public DateTime? Duration_Of_Use { get; set; }
+        [DisplayName("Продолжительность использования")]
+        public int Duration_Of_Use { get; set; }
 
-        [Display(Name = "Адрес подачи техники")]
+        [DisplayName("Адрес подачи техники")]
         public string Delivery_Address { get; set; }
     }
 }

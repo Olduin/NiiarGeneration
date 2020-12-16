@@ -58,6 +58,7 @@
       <DependentUpon>ApplicateListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ApplicatDbContext.cs" />
+    <Compile Include="ApplicationEditContext.cs" />
     <Compile Include="DBInitializer.cs" />
     <Compile Include="ApplicatItemsForm.cs">
       <SubType>Form</SubType>
@@ -98,6 +99,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ApplicateEditForm.resx">
+      <DependentUpon>ApplicateEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicateListForm.resx">
       <DependentUpon>ApplicateListForm.cs</DependentUpon>
     </EmbeddedResource>

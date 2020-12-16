@@ -57,7 +57,7 @@
             this.btAddApplicat});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(129, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(160, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -68,6 +68,7 @@
             this.btAddApplicat.Name = "btAddApplicat";
             this.btAddApplicat.Size = new System.Drawing.Size(117, 22);
             this.btAddApplicat.Text = "Добавить заявку";
+            this.btAddApplicat.Click += new System.EventHandler(this.btAddApplicat_Click_1);
             // 
             // toolStripContainer1
             // 

@@ -44,7 +44,7 @@ namespace NiiarGeneration
             {
                 new ApplicatItem {Applicat = applicats[0],Description_Work = "Покататься",Delivery_Address = "Курчатова 40",Responsible_Customer = "Махмутов Игорь Леонтьевич", Vehicle =vehincles[0]  },
                 new ApplicatItem {Applicat = applicats[1],Description_Work = "Транспортировка груза",Delivery_Address = "Октябрьская",Responsible_Customer = "Богатырёв Анатолий Сергеевич", Vehicle =vehincles[1]  },
-                new ApplicatItem { Applicat = applicats[0], Description_Work = "Трансфер 1 человека в Арбитажный суд г. Тольятти, ул. Автономная, 43", Delivery_Address = "ул. Смирьянова д.51 кв.30", Responsible_Customer = "Сергеев П.П.", Vehicle = vehincles[0] }
+                new ApplicatItem {Applicat = applicats[0], Description_Work = "Трансфер 1 человека в Арбитажный суд г. Тольятти, ул. Автономная, 43", Delivery_Address = "ул. Смирьянова д.51 кв.30", Responsible_Customer = "Сергеев П.П.", Vehicle = vehincles[0] }
         };  
             dbContext.ApplicatItems.AddRange(applicatItems);
 

@@ -13,6 +13,7 @@ namespace NiiarGeneration
     {
         private ApplicatDbContext applicatDbContext;
 
+        
         public Repository()
         {
             applicatDbContext = new ApplicatDbContext();
@@ -40,5 +41,26 @@ namespace NiiarGeneration
             applicatDbContext.Entry(applicat).State = EntityState.Modified;
             applicatDbContext.SaveChanges();
         }
+
+        public List<ApplicatItem> GetApplicatItems()
+        {
+            return applicatDbContext.ApplicatItems.ToList();
+        }
+
+        public List<Vehincle> GetVehincles()
+        {
+            return applicatDbContext.Vehincles.ToList();
+        }
+
+        public Vehincle GetVehincle(long id)
+        {
+            return applicatDbContext.Vehincles.FirstOrDefault(vh => vh.Id == id);
+        }
+
+        public List<TypeApplicat> GetTypes()
+        {
+            return applicatDbContext.TypeApplicates.ToList();
+        }
+        
     }
 }
