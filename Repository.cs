@@ -48,15 +48,22 @@ namespace NiiarGeneration
             return applicatDbContext.ApplicatItems.ToList();
         }
 
-        public List<Vehincle> GetVehincles()
+        public List<Vehicle> GetVehincles()
         {
             return applicatDbContext.Vehincles.ToList();
         }
 
-        public Vehincle GetVehincle(long id)
+        public Vehicle GetVehincle(long id)
         {
             return applicatDbContext.Vehincles.FirstOrDefault(vh => vh.Id == id);
         }
+
+        /*public void VehincleSave(List<Vehincle> vehincles)
+        {
+            applicatDbContext.Vehincles.Attach(vehincles);
+            applicatDbContext.Entry(vehincles).State = EntityState.Modified;
+            applicatDbContext.SaveChanges();
+        }*/
 
         public List<TypeApplicat> GetTypes()
         {

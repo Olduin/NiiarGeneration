@@ -7,37 +7,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NiiarGeneration.Models;
 
 namespace NiiarGeneration
 {
-    public partial class VehicleForm : Form
+    public partial class VehicleEditForm : Form
     {
         private VehicleEditContext vehicleEditContext;
 
-        public VehicleForm(VehicleEditContext vehicleEditContext)
+        private Vehicle vehicle;
+
+        public VehicleEditForm(VehicleEditContext vehicleEditContext, int rowIndex)
         {
             this.vehicleEditContext = vehicleEditContext;
+            this.vehicle = vehicleEditContext.Vehincles[rowIndex];
             InitializeComponent();
-                        
-            this.dgVehicle.DataSource = vehicleEditContext.Vehincles;
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
+            SaveData();
             this.DialogResult = DialogResult.OK;
         }
-
-        private void btCansel_Click(object sender, EventArgs e)
+        
+        private void LoadData()
         {
-            Close();
+            
         }
-
-        private void dgVehicle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void SaveData()
         {
-            VehicleEditForm vehicleEditForm = new VehicleEditForm(vehicleEditContext, e.RowIndex);
-            vehicleEditForm.ShowDialog();
+            vehicle.Name = tbName.Text;
+            vehicle.state_Number = tbStateNumber.Text;
         }
     }
-
-        
 }

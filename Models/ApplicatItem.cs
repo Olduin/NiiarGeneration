@@ -26,7 +26,7 @@ namespace NiiarGeneration.Models
         public string Responsible_Customer { get; set; }
 
         [DisplayName("Наименование транспорта и спецтехники")]
-        public Vehincle Vehicle { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
 
         [DisplayName("Описание проводимых работ")]
         public string Description_Work { get; set; }
@@ -39,5 +39,12 @@ namespace NiiarGeneration.Models
 
         [DisplayName("Адрес подачи техники")]
         public string Delivery_Address { get; set; }
+
+       /* public override string ToString()
+        {
+            return (Vehicle.Name);
+        }
+        */
     }
+
 }

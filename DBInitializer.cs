@@ -22,12 +22,12 @@ namespace NiiarGeneration
 
             dbContext.TypeApplicates.AddRange(typeApplicats);
 
-            IList<Vehincle> vehincles = new List<Vehincle>
+            IList<Vehicle> vehincles = new List<Vehicle>
             {
-                new Vehincle {Name = "Легковой а/м", state_Number = "п333иа73" },
-                new Vehincle {Name = "Легковой а/м", state_Number = "н134иа73" },
-                new Vehincle {Name = "автопогрузчик", state_Number = "н442иа73" },
-                new Vehincle {Name = "СамосвалЗИЛ", state_Number = "п451иа73" }
+                new Vehicle {Name = "Легковой а/м", state_Number = "п333иа73" },
+                new Vehicle {Name = "Легковой а/м", state_Number = "н134иа73" },
+                new Vehicle {Name = "автопогрузчик", state_Number = "н442иа73" },
+                new Vehicle {Name = "СамосвалЗИЛ", state_Number = "п451иа73" }
             };
 
             dbContext.Vehincles.AddRange(vehincles);

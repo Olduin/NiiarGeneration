@@ -68,7 +68,7 @@
     </Compile>
     <Compile Include="Models\Applicat.cs" />
     <Compile Include="Models\TypeApplicat.cs" />
-    <Compile Include="Models\Vehincle.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Models\ApplicatItem.cs" />
     <Compile Include="TitleForm.cs">
       <SubType>Form</SubType>
@@ -84,6 +84,12 @@
     </Compile>
     <Compile Include="Repository.cs" />
     <Compile Include="VehicleEditContext.cs" />
+    <Compile Include="VehicleEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleEditForm.Designer.cs">
+      <DependentUpon>VehicleEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleEditForm.resx">
+      <DependentUpon>VehicleEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleForm.resx">
       <DependentUpon>VehicleForm.cs</DependentUpon>

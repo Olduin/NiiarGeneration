@@ -66,6 +66,18 @@ namespace NiiarGeneration
         private void btVehicles_Click(object sender, EventArgs e)
         {
             VehicleEditContext vehicleEditContext = new VehicleEditContext(repository);
+
+            vehicleEditContext.Vehincles = repository.GetVehincles();
+
+            using (VehicleForm vehicleForm = new VehicleForm(vehicleEditContext))
+            {
+                vehicleForm.ShowDialog();
+
+                /* if (vehicleForm.DialogResult == DialogResult.OK)
+                {
+                    repository.VehincleSave(vehicleEditContext.Vehincle);
+                }*/
+            }
         }
 
 

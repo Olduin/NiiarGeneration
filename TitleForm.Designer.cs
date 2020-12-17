@@ -79,7 +79,7 @@ namespace NiiarGeneration
             this.Controls.Add(this.btForward);
             this.Controls.Add(this.rtbTitle);
             this.Name = "TitleForm";
-            this.Text = "Form1";
+            this.Text = "Титульная форма";
             this.ResumeLayout(false);
 
         }

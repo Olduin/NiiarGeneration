@@ -17,5 +17,10 @@ namespace NiiarGeneration.Models
 
         [MaxLength(30)]
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

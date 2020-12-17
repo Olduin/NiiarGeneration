@@ -84,7 +84,7 @@ namespace NiiarGeneration
         {
             applicatItem.Responsible_Customer = tbResponsibleCustomer.Text;
             applicatItem.Description_Work = tbResponsibleCustomer.Text;
-            applicatItem.Vehicle = cbVehicle.SelectedItem as Vehincle;
+            applicatItem.Vehicle = cbVehicle.SelectedItem as Vehicle;
             //applicatItem.Vehicle.state_Number 
             applicatItem.Time_Of_Filing = dtTime_Of_Filing.Value;
             applicatItem.Duration_Of_Use = Convert.ToInt32(tbDuration_Of_Use.Text);

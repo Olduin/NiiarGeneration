@@ -17,7 +17,7 @@ namespace NiiarGeneration
         }
 
         public DbSet<TypeApplicat> TypeApplicates { get; set; }
-        public DbSet<Vehincle> Vehincles { get; set; }
+        public DbSet<Vehicle> Vehincles { get; set; }
         public DbSet<Applicat> Applicats { get; set; }
         public DbSet<ApplicatItem> ApplicatItems { get; set; }
     }

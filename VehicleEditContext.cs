@@ -10,7 +10,7 @@ namespace NiiarGeneration
     public class VehicleEditContext
     {
         
-        public List<Vehincle> Vehincles { get; set; }
+        public List<Vehicle> Vehincles { get; set; }
 
         private Repository repository;
 

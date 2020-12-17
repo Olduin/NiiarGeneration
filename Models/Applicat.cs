@@ -9,7 +9,40 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace NiiarGeneration.Models
 {
     [Table ("Applicates")]
-    public class Applicat
+
+    
+    //public class Applicat : INotifyPropertyChanged
+    //{
+    //    public event PropertyChangedEventHandler PropertyChanged;
+
+    //    private void OnPropertyChanged(Applicat propertyName)
+    //    {
+    //        if (PropertyChanged != null)
+    //        {
+    //            PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+    //        }
+    //    }
+
+    //    [Key]
+    //    [Display(Name = "№")]
+    //    public int Id { get; set; }
+
+    //    [Display(Name = "Дата")]
+    //    public DateTime Date
+    //    {
+    //        get
+    //        {
+    //            return Date;
+    //        }
+
+    //        set
+    //        {
+    //            Date = value;
+    //            OnPropertyChanged("Date");
+    //        }
+    //    }
+
+        public class Applicat
     {
         [Key]
         [Display(Name = "№")]
