@@ -68,5 +68,13 @@ namespace NiiarGeneration
         {
             applicatEditContext.Applicat.Type = cbTypeApplicate.SelectedItem as TypeApplicat;
         }
+
+        private void btDelete_Click(object sender, EventArgs e, DataGridViewCellEventArgs d)
+        {
+            DataGridViewRow row = dgApplicat.Rows[d.RowIndex];
+            applicatEditContext.Applicat.ApplicatItems.Remove(applicatEditContext.Applicat.ApplicatItems[Convert.ToInt32(row.ToString())]);
+        }
+
+        
     }
 }

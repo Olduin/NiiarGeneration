@@ -26,6 +26,7 @@ namespace NiiarGeneration
         
         public Applicat ApplicatGet(long id)
         {
+            //  Applicat applicat = applicatDbContext.Applicats.Attach(applicat.ApplicatItems.).AsNoTracking().FirstOrDefault(ac => ac.Id == id);
             return applicatDbContext.Applicats.AsNoTracking().FirstOrDefault(ac => ac.Id == id);
         }
 
@@ -61,6 +62,8 @@ namespace NiiarGeneration
         {
             return applicatDbContext.TypeApplicates.ToList();
         }
+
+
         
     }
 }

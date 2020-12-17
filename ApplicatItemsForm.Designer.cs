@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicatItemsForm));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbId = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
@@ -40,16 +39,14 @@
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.mkApplicate = new System.Windows.Forms.MaskedTextBox();
             this.dgApplicat = new System.Windows.Forms.DataGridView();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.btAddItem = new System.Windows.Forms.Button();
+            this.btDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgApplicat)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbId
             // 
-            this.tbId.Location = new System.Drawing.Point(10, 56);
+            this.tbId.Location = new System.Drawing.Point(10, 25);
             this.tbId.Name = "tbId";
             this.tbId.ReadOnly = true;
             this.tbId.Size = new System.Drawing.Size(91, 20);
@@ -58,7 +55,7 @@
             // lbId
             // 
             this.lbId.AutoSize = true;
-            this.lbId.Location = new System.Drawing.Point(7, 40);
+            this.lbId.Location = new System.Drawing.Point(7, 9);
             this.lbId.Name = "lbId";
             this.lbId.Size = new System.Drawing.Size(80, 13);
             this.lbId.TabIndex = 1;
@@ -67,7 +64,7 @@
             // lbTypeApplicat
             // 
             this.lbTypeApplicat.AutoSize = true;
-            this.lbTypeApplicat.Location = new System.Drawing.Point(114, 40);
+            this.lbTypeApplicat.Location = new System.Drawing.Point(114, 9);
             this.lbTypeApplicat.Name = "lbTypeApplicat";
             this.lbTypeApplicat.Size = new System.Drawing.Size(26, 13);
             this.lbTypeApplicat.TabIndex = 3;
@@ -76,7 +73,7 @@
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(274, 40);
+            this.lbDate.Location = new System.Drawing.Point(274, 9);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(72, 13);
             this.lbDate.TabIndex = 6;
@@ -85,7 +82,7 @@
             // cbTypeApplicate
             // 
             this.cbTypeApplicate.FormattingEnabled = true;
-            this.cbTypeApplicate.Location = new System.Drawing.Point(107, 56);
+            this.cbTypeApplicate.Location = new System.Drawing.Point(107, 25);
             this.cbTypeApplicate.Name = "cbTypeApplicate";
             this.cbTypeApplicate.Size = new System.Drawing.Size(164, 21);
             this.cbTypeApplicate.TabIndex = 7;
@@ -93,7 +90,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(645, 337);
+            this.btSave.Location = new System.Drawing.Point(647, 347);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(87, 23);
             this.btSave.TabIndex = 8;
@@ -103,7 +100,7 @@
             // 
             // btCansel
             // 
-            this.btCansel.Location = new System.Drawing.Point(748, 337);
+            this.btCansel.Location = new System.Drawing.Point(750, 347);
             this.btCansel.Name = "btCansel";
             this.btCansel.Size = new System.Drawing.Size(87, 23);
             this.btCansel.TabIndex = 9;
@@ -121,7 +118,7 @@
             // 
             // mkApplicate
             // 
-            this.mkApplicate.Location = new System.Drawing.Point(277, 57);
+            this.mkApplicate.Location = new System.Drawing.Point(277, 26);
             this.mkApplicate.Mask = "00/00/0000";
             this.mkApplicate.Name = "mkApplicate";
             this.mkApplicate.Size = new System.Drawing.Size(100, 20);
@@ -131,35 +128,15 @@
             // dgApplicat
             // 
             this.dgApplicat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgApplicat.Location = new System.Drawing.Point(0, 101);
+            this.dgApplicat.Location = new System.Drawing.Point(0, 70);
             this.dgApplicat.Name = "dgApplicat";
-            this.dgApplicat.Size = new System.Drawing.Size(842, 214);
+            this.dgApplicat.Size = new System.Drawing.Size(849, 253);
             this.dgApplicat.TabIndex = 12;
             this.dgApplicat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplicat_CellContentClick);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(849, 25);
-            this.toolStrip1.TabIndex = 13;
-            this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical90;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(119, 22);
-            this.toolStripButton1.Text = "Добавить строку";
-            this.toolStripButton1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Horizontal;
-            // 
             // btAddItem
             // 
-            this.btAddItem.Location = new System.Drawing.Point(12, 337);
+            this.btAddItem.Location = new System.Drawing.Point(14, 347);
             this.btAddItem.Name = "btAddItem";
             this.btAddItem.Size = new System.Drawing.Size(113, 23);
             this.btAddItem.TabIndex = 14;
@@ -167,13 +144,22 @@
             this.btAddItem.UseVisualStyleBackColor = true;
             this.btAddItem.Click += new System.EventHandler(this.btAddItem_Click);
             // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(133, 347);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(113, 23);
+            this.btDelete.TabIndex = 15;
+            this.btDelete.Text = "Удалить строку";
+            this.btDelete.UseVisualStyleBackColor = true;
+            // 
             // ApplicatItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 424);
+            this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btAddItem);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgApplicat);
             this.Controls.Add(this.mkApplicate);
             this.Controls.Add(this.btCansel);
@@ -186,8 +172,6 @@
             this.Name = "ApplicatItemsForm";
             this.Text = "EditApplicat";
             ((System.ComponentModel.ISupportInitialize)(this.dgApplicat)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,8 +190,7 @@
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.MaskedTextBox mkApplicate;
         private System.Windows.Forms.DataGridView dgApplicat;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.Button btAddItem;
+        private System.Windows.Forms.Button btDelete;
     }
 }

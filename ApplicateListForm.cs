@@ -63,6 +63,11 @@ namespace NiiarGeneration
             }
         }
 
+        private void btVehicles_Click(object sender, EventArgs e)
+        {
+            VehicleEditContext vehicleEditContext = new VehicleEditContext(repository);
+        }
+
 
 
         /* private void OpenApplicatEditForm(ApplicatItem applicatItem)

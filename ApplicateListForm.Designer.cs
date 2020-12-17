@@ -32,6 +32,7 @@
             this.dgApplications = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btAddApplicat = new System.Windows.Forms.ToolStripButton();
+            this.btVehicles = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgApplications)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -54,10 +55,11 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btAddApplicat});
+            this.btAddApplicat,
+            this.btVehicles});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(160, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(321, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -69,6 +71,15 @@
             this.btAddApplicat.Size = new System.Drawing.Size(117, 22);
             this.btAddApplicat.Text = "Добавить заявку";
             this.btAddApplicat.Click += new System.EventHandler(this.btAddApplicat_Click_1);
+            // 
+            // btVehicles
+            // 
+            this.btVehicles.Image = ((System.Drawing.Image)(resources.GetObject("btVehicles.Image")));
+            this.btVehicles.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btVehicles.Name = "btVehicles";
+            this.btVehicles.Size = new System.Drawing.Size(161, 22);
+            this.btVehicles.Text = "Справочник транспорта";
+            this.btVehicles.Click += new System.EventHandler(this.btVehicles_Click);
             // 
             // toolStripContainer1
             // 
@@ -115,5 +126,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btAddApplicat;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ToolStripButton btVehicles;
     }
 }
