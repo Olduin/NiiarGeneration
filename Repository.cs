@@ -32,13 +32,32 @@ namespace NiiarGeneration
         {
             applicatDbContext.Applicats.Add(applicat);
             applicatDbContext.SaveChanges();
+            DeatchAll();
         }
 
         public void ApplicateSave(Applicat applicat) 
         {
             applicatDbContext.Applicats.Attach(applicat);
             applicatDbContext.Entry(applicat).State = EntityState.Modified;
+            foreach(var ai in applicat.ApplicatItems)
+            {
+                applicatDbContext.ApplicatItems.Attach(ai);
+                applicatDbContext.Entry(ai).State = EntityState.Modified;
+            }
             applicatDbContext.SaveChanges();
+            DeatchAll();
+        }
+
+        // Отключение отслеживания всех сущьностей.
+        private void DeatchAll()
+        {
+            var changeEntry = applicatDbContext.ChangeTracker.Entries()
+                .Where(ce => ce.State != EntityState.Detached).ToList();
+
+            foreach(var entry in changeEntry)
+            {
+                entry.State = EntityState.Detached;
+            }
         }
     }
 }
