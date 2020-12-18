@@ -11,7 +11,7 @@ namespace NiiarGeneration
     {
         public Applicat  Applicat { get; set; }
 
-        public List<Vehicle> Vehincles { get { return repository.GetVehincles(); } }
+        public List<Vehicle> Vehincles { get { return repository.VehicleGetList(); } }
 
         public List<TypeApplicat> Types { get { return repository.GetTypes(); } }
 

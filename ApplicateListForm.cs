@@ -67,7 +67,7 @@ namespace NiiarGeneration
         {
             VehicleEditContext vehicleEditContext = new VehicleEditContext(repository);
 
-            vehicleEditContext.Vehincles = repository.GetVehincles();
+            vehicleEditContext.Vehincles = repository.VehicleGetList();
 
             using (VehicleForm vehicleForm = new VehicleForm(vehicleEditContext))
             {
