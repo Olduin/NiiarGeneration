@@ -16,10 +16,7 @@ namespace NiiarGeneration.Models
         [Key]
         [DisplayName ("№п.п.")]
         public int Id { get; set; }
-
-       // [DisplayName("Гос.Номер")]
-        //public virtual Vehincle ... { get; set; }
-
+               
         public Applicat Applicat { get; set; }
 
         [DisplayName("Ответсвенный от заказчика")]
@@ -39,12 +36,7 @@ namespace NiiarGeneration.Models
 
         [DisplayName("Адрес подачи техники")]
         public string Delivery_Address { get; set; }
-
-       /* public override string ToString()
-        {
-            return (Vehicle.Name);
-        }
-        */
+              
     }
 
 }

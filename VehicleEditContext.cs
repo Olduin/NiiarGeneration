@@ -9,14 +9,16 @@ namespace NiiarGeneration
 {
     public class VehicleEditContext
     {
-        
-        public List<Vehicle> Vehincles { get; set; }
-
         private Repository repository;
+
+        public List<Vehicle> Vehincles { get; set; }
 
         public VehicleEditContext(Repository repository)
         {
             this.repository = repository;
         }
+
+        
+        
     }
 }

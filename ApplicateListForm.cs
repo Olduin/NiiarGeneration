@@ -14,7 +14,7 @@ namespace NiiarGeneration
     public partial class ApplicateListForm : Form
     {
         private Repository repository;
-        private ApplicatDbContext applicatDbContext;
+        
 
         public ApplicateListForm(Repository repository)
         {

@@ -17,58 +17,62 @@ namespace NiiarGeneration
         public Repository()
         {
             applicatDbContext = new ApplicatDbContext();
+            
         }
 
         public IList<Applicat> ApplicatGetList() 
         {
-            return applicatDbContext.Applicats.AsNoTracking().ToList();
+            return applicatDbContext.Applicats.ToList();
         }   
         
         public Applicat ApplicatGet(long id)
         {
             //  Applicat applicat = applicatDbContext.Applicats.Attach(applicat.ApplicatItems.).AsNoTracking().FirstOrDefault(ac => ac.Id == id);
-            return applicatDbContext.Applicats.AsNoTracking().FirstOrDefault(ac => ac.Id == id);
+            return applicatDbContext.Applicats.FirstOrDefault(ac => ac.Id == id);
+            /* return applicatDbContext.Applicats
+               .Include(ai => ai.ApplicatItems)
+                .Include(ai=>)
+                .AsNoTracking().FirstOrDefault(ai => ai.Id == id);
+              */
         }
 
-        
+
         public List<ApplicatItem> GetApplicatItems()
         {
-            return applicatDbContext.ApplicatItems.AsNoTracking().ToList();
+            return applicatDbContext.ApplicatItems.ToList();
         }
 
         public List<Vehicle> VehicleGetList()
         {
-            return applicatDbContext.Vehincles.AsNoTracking().ToList();
+            return applicatDbContext.Vehincles.ToList();
         }
 
         public Vehicle GetVehincle(long id)
         {
-            return applicatDbContext.Vehincles.AsNoTracking().FirstOrDefault(vh => vh.Id == id);
+            return applicatDbContext.Vehincles.FirstOrDefault(vh => vh.Id == id);
         }
 
         public List<TypeApplicat> GetTypes()
         {
-            return applicatDbContext.TypeApplicates.AsNoTracking().ToList();
+            return applicatDbContext.TypeApplicates.ToList();
         }
 
         public void ApplicateAdd(Applicat applicat)
         {
             applicatDbContext.Applicats.Add(applicat);
             applicatDbContext.SaveChanges();
-            DeatchAll();
+            //DeatchAll();
         }
 
         public void ApplicateSave(Applicat applicat)
         {
 
-            //DeatchAll();
+            
             if (applicatDbContext.Entry(applicat).State == EntityState.Detached)
             {
                 applicatDbContext.Applicats.Attach(applicat);
                 applicatDbContext.Entry(applicat).State = EntityState.Modified;
             }
-
-            
             
             foreach(var ai in applicat.ApplicatItems)
 
@@ -77,35 +81,22 @@ namespace NiiarGeneration
                 applicatDbContext.Entry(ai).State = EntityState.Modified;
             }
             applicatDbContext.SaveChanges();
-            DeatchAll();
-
-
+            //DeatchAll();
         }
 
-        // Отключение отслеживания всех сущьностей.
-        private void DeatchAll()
-        {
-            var changeEntry = applicatDbContext.ChangeTracker.Entries()
-                .Where(ce => ce.State != EntityState.Detached).ToList();
-
-            foreach(var entry in changeEntry)
-            {
-                entry.State = EntityState.Detached;
-            }
-
-        }
+        
 
         public void VehincleSave(Vehicle vehicle)
         {
             applicatDbContext.Vehincles.Attach(vehicle);
             applicatDbContext.Entry(vehicle).State = EntityState.Modified;
             applicatDbContext.SaveChanges();
-            DeatchAll();
+            //DeatchAll();
         }
 
         
 
-        // Отключение отслеживания всех сущностей.
+        // Отключение отслеживания всех сущьностей.
         private void DeatchAll()
         {
             var changeEntry = applicatDbContext.ChangeTracker.Entries()
