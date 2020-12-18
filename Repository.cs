@@ -17,6 +17,7 @@ namespace NiiarGeneration
         public Repository()
         {
             applicatDbContext = new ApplicatDbContext();
+            //applicatDbContext.Configuration.LazyLoadingEnabled = false;
         }
 
         public IList<Applicat> ApplicatGetList() 
@@ -27,7 +28,10 @@ namespace NiiarGeneration
         public Applicat ApplicatGet(long id)
         {
             //  Applicat applicat = applicatDbContext.Applicats.Attach(applicat.ApplicatItems.).AsNoTracking().FirstOrDefault(ac => ac.Id == id);
-            return applicatDbContext.Applicats.AsNoTracking().FirstOrDefault(ac => ac.Id == id);
+            return applicatDbContext.Applicats
+                //.Include(ai => ai.ApplicatItems)
+                //.Include(ai => ai.ApplicatItems.Select(v => v.Vehicle))
+                .AsNoTracking().FirstOrDefault(ac => ac.Id == id);
         }
 
         
@@ -60,39 +64,18 @@ namespace NiiarGeneration
 
         public void ApplicateSave(Applicat applicat)
         {
-
-            //DeatchAll();
-            if (applicatDbContext.Entry(applicat).State == EntityState.Detached)
-            {
-                applicatDbContext.Applicats.Attach(applicat);
-                applicatDbContext.Entry(applicat).State = EntityState.Modified;
-            }
-
-            
+            applicat = Normalize(applicat);
+            applicatDbContext.Applicats.Attach(applicat);
+            applicatDbContext.Entry(applicat).State = EntityState.Modified;          
             
             foreach(var ai in applicat.ApplicatItems)
-
             {
                 applicatDbContext.ApplicatItems.Attach(ai);
                 applicatDbContext.Entry(ai).State = EntityState.Modified;
             }
+
             applicatDbContext.SaveChanges();
             DeatchAll();
-
-
-        }
-
-        // Отключение отслеживания всех сущьностей.
-        private void DeatchAll()
-        {
-            var changeEntry = applicatDbContext.ChangeTracker.Entries()
-                .Where(ce => ce.State != EntityState.Detached).ToList();
-
-            foreach(var entry in changeEntry)
-            {
-                entry.State = EntityState.Detached;
-            }
-
         }
 
         public void VehincleSave(Vehicle vehicle)
@@ -103,7 +86,18 @@ namespace NiiarGeneration
             DeatchAll();
         }
 
-        
+        private Applicat Normalize(Applicat applicat)
+        {
+            foreach(var ai in applicat.ApplicatItems)
+            {
+                foreach(var v in applicat.ApplicatItems.FindAll(a => a.Vehicle.Id == ai.Vehicle.Id && a.Vehicle != ai.Vehicle))
+                {
+                    v.Vehicle = ai.Vehicle;
+                }
+            }
+
+            return applicat;
+        }
 
         // Отключение отслеживания всех сущностей.
         private void DeatchAll()
@@ -116,7 +110,5 @@ namespace NiiarGeneration
                 entry.State = EntityState.Detached;
             }
         }
-
-
     }
 }

@@ -14,8 +14,10 @@ namespace NiiarGeneration.Models
     {
         [Key]
         public int Id { get; set; }
+
         [MaxLength(40)]
         public string Name { get; set; }
+        
         public string state_Number { get; set; }
 
         public override string ToString()

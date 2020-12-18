@@ -20,7 +20,7 @@ namespace NiiarGeneration.Models
        // [DisplayName("Гос.Номер")]
         //public virtual Vehincle ... { get; set; }
 
-        public Applicat Applicat { get; set; }
+        public virtual Applicat Applicat { get; set; }
 
         [DisplayName("Ответсвенный от заказчика")]
         public string Responsible_Customer { get; set; }
