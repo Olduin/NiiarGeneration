@@ -51,7 +51,6 @@ namespace NiiarGeneration
 
         private void LoadData()
         {
-            
             tbIdItem.Text = applicatItem.Id.ToString();
             
             tbResponsibleCustomer.Text = applicatItem.Responsible_Customer;

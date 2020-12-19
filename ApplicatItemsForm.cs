@@ -13,8 +13,8 @@ namespace NiiarGeneration
 {
     public partial class ApplicatItemsForm : Form
     {
-        private ApplicatEditContext applicatEditContext;        
-        
+        private ApplicatEditContext applicatEditContext;
+                
         public ApplicatItemsForm(ApplicatEditContext applicatEditContext)
         {
             this.applicatEditContext = applicatEditContext;
@@ -55,12 +55,16 @@ namespace NiiarGeneration
 
         private void btAddItem_Click(object sender, EventArgs e)
         {
+            this.applicatEditContext = applicatEditContext;
             /*ApplicatItem applicatItem = new ApplicatItem();
                         ApplicateEditForm applicateEditForm = new ApplicateEditForm(applicatEditContext);
                         applicateEditForm.ShowDialog();
                         */
-
+           
             applicatEditContext.Applicat.ApplicatItems.Add(new ApplicatItem());
+
+            dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
+            dgApplicat.Refresh();
             
         }
 

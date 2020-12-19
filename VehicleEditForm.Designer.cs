@@ -84,6 +84,7 @@ namespace NiiarGeneration
             this.btCansel.TabIndex = 21;
             this.btCansel.Text = "Отмена";
             this.btCansel.UseVisualStyleBackColor = true;
+            this.btCansel.Click += new System.EventHandler(this.btCansel_Click);
             // 
             // btSave
             // 

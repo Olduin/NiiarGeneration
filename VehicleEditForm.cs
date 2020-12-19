@@ -22,6 +22,7 @@ namespace NiiarGeneration
             this.vehicleEditContext = vehicleEditContext;
             this.vehicle = vehicleEditContext.Vehincles[rowIndex];
             InitializeComponent();
+            LoadData();
         }
 
         private void btSave_Click(object sender, EventArgs e)
@@ -32,13 +33,20 @@ namespace NiiarGeneration
         
         private void LoadData()
         {
-            
+            tbName.Text = vehicle.Name;
+            tbStateNumber.Text = vehicle.state_Number;
         }
         
         private void SaveData()
         {
             vehicle.Name = tbName.Text;
             vehicle.state_Number = tbStateNumber.Text;
+            
+        }
+
+        private void btCansel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

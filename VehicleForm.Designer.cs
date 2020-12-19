@@ -45,6 +45,7 @@ namespace NiiarGeneration
             this.btDelete.TabIndex = 26;
             this.btDelete.Text = "Удалить строку";
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click_1);
             // 
             // btAddItem
             // 
@@ -54,6 +55,7 @@ namespace NiiarGeneration
             this.btAddItem.TabIndex = 25;
             this.btAddItem.Text = "Добавить строку";
             this.btAddItem.UseVisualStyleBackColor = true;
+            this.btAddItem.Click += new System.EventHandler(this.btAddItem_Click);
             // 
             // dgVehicle
             // 
