@@ -8,9 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NiiarGeneration.Models
 {
-    [Table ("Applicates")]
-
-    
+    [Table ("Applicates")]    
     //public class Applicat : INotifyPropertyChanged
     //{
     //    public event PropertyChangedEventHandler PropertyChanged;
