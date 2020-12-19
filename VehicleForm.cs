@@ -46,7 +46,7 @@ namespace NiiarGeneration
         private void btAddItem_Click(object sender, EventArgs e)
         {
             vehicleEditContext.Vehincles.Add(new Vehicle() );
-            //LoadData();
+            //LoadCbTypes();
             dgVehicle.Refresh();
             
         }
@@ -67,6 +67,11 @@ namespace NiiarGeneration
         {
 
             this.dgVehicle.DataSource = vehicleEditContext.Vehincles;
+        }
+
+        private void VehicleForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

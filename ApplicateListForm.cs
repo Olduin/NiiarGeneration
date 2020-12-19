@@ -19,8 +19,13 @@ namespace NiiarGeneration
         public ApplicateListForm(Repository repository)
         {
             this.repository = repository;
+            
+
             InitializeComponent();
             this.dgApplications.DataSource = repository.ApplicatGetList();
+
+            LoadCbTypes();
+            
         }
 
         
@@ -80,6 +85,19 @@ namespace NiiarGeneration
             }
         }
 
+        private void LoadCbTypes()
+        {
+            ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
+            cbType.SelectedIndex = -1;
+            cbType.ComboBox.DisplayMember = "Name";
+            cbType.ComboBox.ValueMember = "Id";
+            cbType.ComboBox.DataSource = applicationEditContext.Types;
+        }
+
+        private void cbType_Click(object sender, EventArgs e)
+        {
+            repository.ApplicatGet(cbType.SelectedItem as )
+        }
 
 
         /* private void OpenApplicatEditForm(ApplicatItem applicatItem)

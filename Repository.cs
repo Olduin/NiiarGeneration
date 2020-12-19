@@ -34,6 +34,15 @@ namespace NiiarGeneration
                 .AsNoTracking().FirstOrDefault(ac => ac.Id == id);
         }
 
+        public List<Applicat> ApplicatsGet(TypeApplicat typeApplicat)
+        {
+            foreach(var )
+            {
+                return applicatDbContext.Applicats.AsNoTracking().ToList().Find(at => at.Type == typeApplicat);
+            }
+            
+        }
+
 
         public List<ApplicatItem> GetApplicatItems()
         {

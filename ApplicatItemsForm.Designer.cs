@@ -128,9 +128,9 @@
             // dgApplicat
             // 
             this.dgApplicat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgApplicat.Location = new System.Drawing.Point(0, 70);
+            this.dgApplicat.Location = new System.Drawing.Point(0, 52);
             this.dgApplicat.Name = "dgApplicat";
-            this.dgApplicat.Size = new System.Drawing.Size(849, 253);
+            this.dgApplicat.Size = new System.Drawing.Size(849, 294);
             this.dgApplicat.TabIndex = 12;
             this.dgApplicat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplicat_CellContentClick);
             // 
@@ -157,7 +157,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 424);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(851, 372);
             this.Controls.Add(this.btDelete);
             this.Controls.Add(this.btAddItem);
             this.Controls.Add(this.dgApplicat);

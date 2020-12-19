@@ -33,6 +33,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btAddApplicat = new System.Windows.Forms.ToolStripButton();
             this.btVehicles = new System.Windows.Forms.ToolStripButton();
+            this.cbType = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgApplications)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -56,10 +57,11 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btAddApplicat,
-            this.btVehicles});
+            this.btVehicles,
+            this.cbType});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(290, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(446, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -80,6 +82,13 @@
             this.btVehicles.Size = new System.Drawing.Size(161, 22);
             this.btVehicles.Text = "Справочник транспорта";
             this.btVehicles.Click += new System.EventHandler(this.btVehicles_Click);
+            // 
+            // cbType
+            // 
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(121, 25);
+            this.cbType.Text = "Тип";
+            this.cbType.Click += new System.EventHandler(this.cbType_Click);
             // 
             // toolStripContainer1
             // 
@@ -127,5 +136,6 @@
         private System.Windows.Forms.ToolStripButton btAddApplicat;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStripButton btVehicles;
+        private System.Windows.Forms.ToolStripComboBox cbType;
     }
 }
