@@ -45,7 +45,7 @@ namespace NiiarGeneration
             return applicatDbContext.Vehincles.ToList();
         }
 
-        public Vehicle GetVehincle(long id)
+        public Vehicle GetVehicle(long id)
         {
             return applicatDbContext.Vehincles.FirstOrDefault(vh => vh.Id == id);
         }
@@ -59,7 +59,7 @@ namespace NiiarGeneration
         {
             applicatDbContext.Applicats.Add(applicat);
             applicatDbContext.SaveChanges();
-            //DeatchAll();
+            DeatchAll();
         }
 
         public void ApplicateSave(Applicat applicat)
@@ -75,17 +75,17 @@ namespace NiiarGeneration
             }
 
             applicatDbContext.SaveChanges();
-            //DeatchAll();
+            DeatchAll();
         }
 
         
 
-        public void VehincleSave(Vehicle vehicle)
+        public void VehicleSave(Vehicle vehicle)
         {
             applicatDbContext.Vehincles.Attach(vehicle);
             applicatDbContext.Entry(vehicle).State = EntityState.Modified;
             applicatDbContext.SaveChanges();
-            //DeatchAll();
+            DeatchAll();
         }
 
         private Applicat Normalize(Applicat applicat)

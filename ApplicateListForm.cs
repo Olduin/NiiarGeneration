@@ -75,7 +75,7 @@ namespace NiiarGeneration
 
                 /* if (vehicleForm.DialogResult == DialogResult.OK)
                 {
-                    repository.VehincleSave(vehicleEditContext.Vehincle);
+                    repository.VehicleSave(vehicleEditContext.Vehincle);
                 }*/
             }
         }

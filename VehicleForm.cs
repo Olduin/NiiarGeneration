@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NiiarGeneration.Models;
 
 namespace NiiarGeneration
 {
@@ -44,7 +45,10 @@ namespace NiiarGeneration
 
         private void btAddItem_Click(object sender, EventArgs e)
         {
-           // vehicleEditContext.Vehincles.Add()
+            vehicleEditContext.Vehincles.Add(new Vehicle() );
+            //LoadData();
+            dgVehicle.Refresh();
+            
         }
 
         
@@ -55,8 +59,14 @@ namespace NiiarGeneration
 
             //vehicleEditContext.Vehincles.Remove(vehicleEditContext.Vehincles[ Convert.ToInt32(row)]);
              
-                //repository.DeleteVehile(vehicleEditContext, Convert.ToInt32(currentVehicle));
+              // vehicleEditContext.reposi //repository.DeleteVehile(vehicleEditContext, Convert.ToInt32(currentVehicle));
 
+        }
+
+        private void LoadData()
+        {
+
+            this.dgVehicle.DataSource = vehicleEditContext.Vehincles;
         }
     }
 
