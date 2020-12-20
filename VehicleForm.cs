@@ -17,12 +17,15 @@ namespace NiiarGeneration
      
         int currentVehicle;
 
+        private BindingSource bindingSource;
+
         public VehicleForm(VehicleEditContext vehicleEditContext)
         {
             this.vehicleEditContext = vehicleEditContext;
             InitializeComponent();
- 
-            this.dgVehicle.DataSource = vehicleEditContext.Vehincles;
+
+            bindingSource = new BindingSource(vehicleEditContext, "Vehincles");
+            this.dgVehicle.DataSource = bindingSource;
             
         }
 
@@ -46,9 +49,7 @@ namespace NiiarGeneration
         private void btAddItem_Click(object sender, EventArgs e)
         {
             vehicleEditContext.Vehincles.Add(new Vehicle() );
-            //LoadCbTypes();
-            dgVehicle.Refresh();
-            
+            bindingSource.ResetBindings(false);            
         }
 
         
