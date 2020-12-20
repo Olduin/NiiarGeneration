@@ -90,7 +90,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(647, 347);
+            this.btSave.Location = new System.Drawing.Point(762, 347);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(87, 23);
             this.btSave.TabIndex = 8;
@@ -100,7 +100,7 @@
             // 
             // btCansel
             // 
-            this.btCansel.Location = new System.Drawing.Point(750, 347);
+            this.btCansel.Location = new System.Drawing.Point(669, 347);
             this.btCansel.Name = "btCansel";
             this.btCansel.Size = new System.Drawing.Size(87, 23);
             this.btCansel.TabIndex = 9;
@@ -136,7 +136,7 @@
             // 
             // btAddItem
             // 
-            this.btAddItem.Location = new System.Drawing.Point(14, 347);
+            this.btAddItem.Location = new System.Drawing.Point(0, 347);
             this.btAddItem.Name = "btAddItem";
             this.btAddItem.Size = new System.Drawing.Size(113, 23);
             this.btAddItem.TabIndex = 14;
@@ -146,12 +146,13 @@
             // 
             // btDelete
             // 
-            this.btDelete.Location = new System.Drawing.Point(133, 347);
+            this.btDelete.Location = new System.Drawing.Point(119, 347);
             this.btDelete.Name = "btDelete";
             this.btDelete.Size = new System.Drawing.Size(113, 23);
             this.btDelete.TabIndex = 15;
             this.btDelete.Text = "Удалить строку";
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // ApplicatItemsForm
             // 

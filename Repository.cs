@@ -23,8 +23,9 @@ namespace NiiarGeneration
         public IList<Applicat> ApplicatGetList() 
         {
             return applicatDbContext.Applicats.ToList();
-        }   
-        
+        }
+
+      
         public Applicat ApplicatGet(long id)
         {
             //  Applicat applicat = applicatDbContext.Applicats.Attach(applicat.ApplicatItems.).AsNoTracking().FirstOrDefault(ac => ac.Id == id);
@@ -34,15 +35,12 @@ namespace NiiarGeneration
                 .AsNoTracking().FirstOrDefault(ac => ac.Id == id);
         }
 
-        public List<Applicat> ApplicatsGet(TypeApplicat typeApplicat)
-        {
-            foreach(var )
-            {
-                return applicatDbContext.Applicats.AsNoTracking().ToList().Find(at => at.Type == typeApplicat);
-            }
-            
-        }
+          /*public List<Applicat> ApplicatsGet(TypeApplicat typeApplicat)
+          {
+            return applicatDbContext.Applicats.Where()
 
+          }
+          */
 
         public List<ApplicatItem> GetApplicatItems()
         {
@@ -59,7 +57,7 @@ namespace NiiarGeneration
             return applicatDbContext.Vehincles.FirstOrDefault(vh => vh.Id == id);
         }
 
-        public List<TypeApplicat> GetTypes()
+        public List<TypeApplicat> GetTypesList()
         {
             return applicatDbContext.TypeApplicates.ToList();
         }

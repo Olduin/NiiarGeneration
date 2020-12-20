@@ -83,6 +83,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Repository.cs" />
+    <Compile Include="TypeContext.cs" />
+    <Compile Include="TypeEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeEditForm.Designer.cs">
+      <DependentUpon>TypeEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeForm.Designer.cs">
+      <DependentUpon>TypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehicleEditContext.cs" />
     <Compile Include="VehicleEditForm.cs">
       <SubType>Form</SubType>
@@ -127,6 +140,12 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeEditForm.resx">
+      <DependentUpon>TypeEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeForm.resx">
+      <DependentUpon>TypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleEditForm.resx">
       <DependentUpon>VehicleEditForm.cs</DependentUpon>

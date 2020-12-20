@@ -33,6 +33,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btAddApplicat = new System.Windows.Forms.ToolStripButton();
             this.btVehicles = new System.Windows.Forms.ToolStripButton();
+            this.btType = new System.Windows.Forms.ToolStripButton();
             this.cbType = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             ((System.ComponentModel.ISupportInitialize)(this.dgApplications)).BeginInit();
@@ -58,10 +59,11 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btAddApplicat,
             this.btVehicles,
+            this.btType,
             this.cbType});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(446, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(576, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -82,6 +84,15 @@
             this.btVehicles.Size = new System.Drawing.Size(161, 22);
             this.btVehicles.Text = "Справочник транспорта";
             this.btVehicles.Click += new System.EventHandler(this.btVehicles_Click);
+            // 
+            // btType
+            // 
+            this.btType.Image = ((System.Drawing.Image)(resources.GetObject("btType.Image")));
+            this.btType.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btType.Name = "btType";
+            this.btType.Size = new System.Drawing.Size(130, 22);
+            this.btType.Text = "Справочник типов";
+            this.btType.Click += new System.EventHandler(this.btType_Click);
             // 
             // cbType
             // 
@@ -137,5 +148,6 @@
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStripButton btVehicles;
         private System.Windows.Forms.ToolStripComboBox cbType;
+        private System.Windows.Forms.ToolStripButton btType;
     }
 }

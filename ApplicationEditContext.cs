@@ -13,7 +13,7 @@ namespace NiiarGeneration
 
         public List<Vehicle> Vehincles { get { return repository.VehicleGetList(); } }
 
-        public List<TypeApplicat> Types { get { return repository.GetTypes(); } }
+        public List<TypeApplicat> Types { get { return repository.GetTypesList(); } }
 
         private Repository repository;
 

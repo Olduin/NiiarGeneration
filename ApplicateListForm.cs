@@ -96,8 +96,27 @@ namespace NiiarGeneration
 
         private void cbType_Click(object sender, EventArgs e)
         {
-            repository.ApplicatGet(cbType.SelectedItem as )
+            ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
+            //repository.ApplicatGet();
         }
+
+        private void btType_Click(object sender, EventArgs e)
+        {
+            TypeContext typeContext = new TypeContext(repository);
+            typeContext.Types = repository.GetTypesList();
+
+            using (TypeForm typeForm = new TypeForm(typeContext))
+            {
+                typeForm.ShowDialog();
+
+                if(typeForm.DialogResult == DialogResult.OK)
+                {
+                   // repository.ty
+                }
+            }
+        }
+
+
 
 
         /* private void OpenApplicatEditForm(ApplicatItem applicatItem)

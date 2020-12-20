@@ -14,7 +14,9 @@ namespace NiiarGeneration
     public partial class ApplicatItemsForm : Form
     {
         private ApplicatEditContext applicatEditContext;
-                
+
+        private BindingSource bindingSource;
+
         public ApplicatItemsForm(ApplicatEditContext applicatEditContext)
         {
             this.applicatEditContext = applicatEditContext;
@@ -30,7 +32,9 @@ namespace NiiarGeneration
 
 
 
-            this.dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
+            //this.dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
+            bindingSource = new BindingSource(applicatEditContext.Applicat, "ApplicatItems");
+            this.dgApplicat.DataSource = bindingSource;
         }
 
         
@@ -75,10 +79,17 @@ namespace NiiarGeneration
 
         private void btDelete_Click(object sender, EventArgs e, DataGridViewCellEventArgs d)
         {
-            DataGridViewRow row = dgApplicat.Rows[d.RowIndex];
+            /*DataGridViewRow row = dgApplicat.Rows[d.RowIndex];
             applicatEditContext.Applicat.ApplicatItems.Remove(applicatEditContext.Applicat.ApplicatItems[Convert.ToInt32(row.ToString())]);
+            */
+            bindingSource = new BindingSource(applicatEditContext.Applicat, "ApplicatItems");
+            bindingSource.Remove(dgApplicat.Rows[d.RowIndex]);
+
         }
 
-        
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

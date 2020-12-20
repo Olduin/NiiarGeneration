@@ -7,23 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NiiarGeneration;
 
 namespace NiiarGeneration
 {
     public partial class TitleForm : Form
     {
-        public TitleForm()
-        {
-            //InitializeComponent();
-            //foreach (var line in rtbTitle.Lines)
-            //{
-            //    //line.selectionAlignment = HorizontalAlignment.Center;
-            //}        
+        public TitleForm() 
+        {            
+            InitializeComponent();
+            rtbTitle.SelectionAlignment = HorizontalAlignment.Center;
+            foreach (var line in rtbTitle.Lines)
+            {
+
+                rtbTitle.SelectionAlignment = HorizontalAlignment.Center;
+            }        
         }
 
         private void btExit_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btForward_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+            
         }
     }
 }

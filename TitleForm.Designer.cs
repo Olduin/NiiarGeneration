@@ -56,6 +56,7 @@ namespace NiiarGeneration
             this.btForward.TabIndex = 1;
             this.btForward.Text = "Продолжить";
             this.btForward.UseVisualStyleBackColor = true;
+            this.btForward.Click += new System.EventHandler(this.btForward_Click);
             // 
             // btExit
             // 

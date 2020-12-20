@@ -17,10 +17,17 @@ namespace NiiarGeneration
         public AppContext(Repository repository)
         {
             this.repository = repository;
-            //currentForm = new TitleForm();
+            //currentForm = new TitleForm() ;
+            //if (currentForm.DialogResult == DialogResult.OK)
+            //{
+                
+                
+            //}
             currentForm = new ApplicateListForm(repository);
+
             currentForm.FormClosed += OnFormClosed;
             currentForm.Show();
+            
         }
 
         private void SwitchContext()

@@ -56,12 +56,12 @@ namespace NiiarGeneration
         private void btDelete_Click_1(object sender, EventArgs e)
         {
             this.vehicleEditContext = vehicleEditContext;
-            //DataGridViewRow row = dgVehicle.Rows[c.RowIndex];
+            /*DataGridViewRow row = dgVehicle.Rows[c.RowIndex];
 
-            //vehicleEditContext.Vehincles.Remove(vehicleEditContext.Vehincles[ Convert.ToInt32(row)]);
+            vehicleEditContext.Vehincles.Remove(vehicleEditContext.Vehincles[ Convert.ToInt32(row)]);
              
               // vehicleEditContext.reposi //repository.DeleteVehile(vehicleEditContext, Convert.ToInt32(currentVehicle));
-
+            */
         }
 
         private void LoadData()
@@ -74,6 +74,27 @@ namespace NiiarGeneration
         {
 
         }
+
+        private void btCansel_Click_1(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btDelete_(object sender, DataGridViewCellEventArgs c)
+        {
+            this.vehicleEditContext = vehicleEditContext;
+            DataGridViewRow row = dgVehicle.Rows[c.RowIndex];
+
+            vehicleEditContext.Vehincles.Remove(vehicleEditContext.Vehincles[Convert.ToInt32(row)]);
+
+            // vehicleEditContext.reposi //repository.DeleteVehile(vehicleEditContext, Convert.ToInt32(currentVehicle));
+
+        }
+
+       /* private void btDelete_Click(object sender, EventArgs e)
+        {
+            this.Click += btDelete_(this.btDelete_Click);
+        }*/
     }
 
 }

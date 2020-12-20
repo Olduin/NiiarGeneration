@@ -1,7 +1,7 @@
 ﻿
 namespace NiiarGeneration
 {
-    partial class VehicleForm
+    partial class TypeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,10 +34,10 @@ namespace NiiarGeneration
             this.btAddItem = new System.Windows.Forms.Button();
             this.btCansel = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
-            this.dgVehicle = new System.Windows.Forms.DataGridView();
+            this.dgType = new System.Windows.Forms.DataGridView();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVehicle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgType)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -50,100 +50,102 @@ namespace NiiarGeneration
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btAddItem);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btCansel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btSave);
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.dgVehicle);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(693, 285);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.dgType);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 334);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.toolStripContainer1.Size = new System.Drawing.Size(693, 310);
-            this.toolStripContainer1.TabIndex = 27;
+            this.toolStripContainer1.Size = new System.Drawing.Size(800, 334);
+            this.toolStripContainer1.TabIndex = 28;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // btDelete
             // 
             this.btDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btDelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btDelete.Location = new System.Drawing.Point(113, 284);
+            this.btDelete.Location = new System.Drawing.Point(113, 310);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(113, 0);
+            this.btDelete.Size = new System.Drawing.Size(113, 22);
             this.btDelete.TabIndex = 30;
-            this.btDelete.Text = "Списать технику";
+            this.btDelete.Text = "Удалить тип";
             this.btDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
             // 
             // btAddItem
             // 
             this.btAddItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btAddItem.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btAddItem.Location = new System.Drawing.Point(0, 284);
+            this.btAddItem.Location = new System.Drawing.Point(0, 310);
             this.btAddItem.Name = "btAddItem";
-            this.btAddItem.Size = new System.Drawing.Size(113, 0);
+            this.btAddItem.Size = new System.Drawing.Size(113, 22);
             this.btAddItem.TabIndex = 29;
             this.btAddItem.Text = "Добавить технику";
             this.btAddItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btAddItem.UseVisualStyleBackColor = true;
+            this.btAddItem.Click += new System.EventHandler(this.btAddItem_Click);
             // 
             // btCansel
             // 
             this.btCansel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btCansel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btCansel.Location = new System.Drawing.Point(517, 284);
+            this.btCansel.Location = new System.Drawing.Point(624, 310);
             this.btCansel.Name = "btCansel";
-            this.btCansel.Size = new System.Drawing.Size(87, 0);
+            this.btCansel.Size = new System.Drawing.Size(87, 22);
             this.btCansel.TabIndex = 28;
             this.btCansel.Text = "Отмена";
             this.btCansel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btCansel.UseVisualStyleBackColor = true;
-            this.btCansel.Click += new System.EventHandler(this.btCansel_Click_1);
+            this.btCansel.Click += new System.EventHandler(this.btCansel_Click);
             // 
             // btSave
             // 
             this.btSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btSave.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btSave.Location = new System.Drawing.Point(604, 284);
+            this.btSave.Location = new System.Drawing.Point(711, 310);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(87, 0);
+            this.btSave.Size = new System.Drawing.Size(87, 22);
             this.btSave.TabIndex = 27;
             this.btSave.Text = "Сохранить";
             this.btSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
-            // dgVehicle
+            // dgType
             // 
-            this.dgVehicle.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgVehicle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgVehicle.Location = new System.Drawing.Point(0, 0);
-            this.dgVehicle.Name = "dgVehicle";
-            this.dgVehicle.Size = new System.Drawing.Size(691, 284);
-            this.dgVehicle.TabIndex = 24;
-            this.dgVehicle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgVehicle_CellContentClick);
+            this.dgType.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgType.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgType.Location = new System.Drawing.Point(0, 0);
+            this.dgType.Name = "dgType";
+            this.dgType.Size = new System.Drawing.Size(798, 310);
+            this.dgType.TabIndex = 24;
+            this.dgType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgType_CellContentClick);
             // 
-            // VehicleForm
+            // TypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(693, 310);
+            this.ClientSize = new System.Drawing.Size(800, 334);
             this.Controls.Add(this.toolStripContainer1);
-            this.Name = "VehicleForm";
-            this.Text = "VehicleForm";
-            this.Load += new System.EventHandler(this.VehicleForm_Load);
+            this.Name = "TypeForm";
+            this.Text = "TypeForm";
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVehicle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgType)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.Button btDelete;
         private System.Windows.Forms.Button btAddItem;
         private System.Windows.Forms.Button btCansel;
         private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.DataGridView dgVehicle;
+        private System.Windows.Forms.DataGridView dgType;
     }
 }
