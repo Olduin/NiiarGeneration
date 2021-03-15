@@ -33,7 +33,6 @@ namespace NiiarGeneration
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TitleForm));
             this.rtbTitle = new System.Windows.Forms.RichTextBox();
             this.btForward = new System.Windows.Forms.Button();
-            this.btExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // rtbTitle
@@ -50,7 +49,7 @@ namespace NiiarGeneration
             // 
             // btForward
             // 
-            this.btForward.Location = new System.Drawing.Point(608, 443);
+            this.btForward.Location = new System.Drawing.Point(683, 443);
             this.btForward.Name = "btForward";
             this.btForward.Size = new System.Drawing.Size(87, 23);
             this.btForward.TabIndex = 1;
@@ -58,28 +57,19 @@ namespace NiiarGeneration
             this.btForward.UseVisualStyleBackColor = true;
             this.btForward.Click += new System.EventHandler(this.btForward_Click);
             // 
-            // btExit
-            // 
-            this.btExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btExit.Location = new System.Drawing.Point(701, 443);
-            this.btExit.Name = "btExit";
-            this.btExit.Size = new System.Drawing.Size(87, 23);
-            this.btExit.TabIndex = 2;
-            this.btExit.Text = "Выход";
-            this.btExit.UseVisualStyleBackColor = true;
-            this.btExit.Click += new System.EventHandler(this.btExit_Click);
-            // 
             // TitleForm
             // 
             this.AcceptButton = this.btForward;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btExit;
             this.ClientSize = new System.Drawing.Size(800, 478);
-            this.Controls.Add(this.btExit);
             this.Controls.Add(this.btForward);
             this.Controls.Add(this.rtbTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TitleForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Титульная форма";
             this.ResumeLayout(false);
 
@@ -89,6 +79,5 @@ namespace NiiarGeneration
 
         private System.Windows.Forms.RichTextBox rtbTitle;
         private Button btForward;
-        private Button btExit;
     }
 }

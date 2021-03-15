@@ -16,6 +16,7 @@ namespace NiiarGeneration.Models
         public long Id { get; set; }
 
         [MaxLength(30)]
+        [Display(Name = "Наименование типа")]
         public string Name { get; set; }
 
         public override string ToString()

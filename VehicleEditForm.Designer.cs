@@ -108,7 +108,8 @@ namespace NiiarGeneration
             this.Controls.Add(this.tbStateNumber);
             this.Controls.Add(this.tbName);
             this.Name = "VehicleEditForm";
-            this.Text = "VehicleEditForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Редактирование  данных о техники";
             this.ResumeLayout(false);
             this.PerformLayout();
 

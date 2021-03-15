@@ -16,12 +16,11 @@ namespace NiiarGeneration
         public TitleForm() 
         {            
             InitializeComponent();
+            rtbTitle.SelectAll();
             rtbTitle.SelectionAlignment = HorizontalAlignment.Center;
-            foreach (var line in rtbTitle.Lines)
-            {
-
-                rtbTitle.SelectionAlignment = HorizontalAlignment.Center;
-            }        
+            rtbTitle.DeselectAll();
+            
+               
         }
 
         private void btExit_Click(object sender, EventArgs e)

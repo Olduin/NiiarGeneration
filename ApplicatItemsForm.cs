@@ -49,27 +49,26 @@ namespace NiiarGeneration
         }
 
         
-        private void dgApplicat_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-                        
-            ApplicateEditForm applicateEditForm = new ApplicateEditForm(applicatEditContext, e.RowIndex);
-            applicateEditForm.ShowDialog();
-
-        }
+      
 
         private void btAddItem_Click(object sender, EventArgs e)
         {
-            this.applicatEditContext = applicatEditContext;
+         
             /*ApplicatItem applicatItem = new ApplicatItem();
                         ApplicateEditForm applicateEditForm = new ApplicateEditForm(applicatEditContext);
                         applicateEditForm.ShowDialog();
                         */
-           
+            if(applicatEditContext.Applicat == null)
+            {
+                applicatEditContext.Applicat = new Applicat();
+            }
+
             applicatEditContext.Applicat.ApplicatItems.Add(new ApplicatItem());
 
-            dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
-            dgApplicat.Refresh();
-            
+           // dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
+            bindingSource.ResetBindings(false);
+           
+
         }
 
         private void cbTypeApplicate_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +88,26 @@ namespace NiiarGeneration
 
         private void btDelete_Click(object sender, EventArgs e)
         {
+            long delitedRowId = Convert.ToInt64(dgApplicat.CurrentRow.Cells[0].Value);
+
             
+            ApplicatItem delitedAI = applicatEditContext.Applicat.ApplicatItems.FirstOrDefault(ai => ai.Id == delitedRowId);
+
+            applicatEditContext.Applicat.ApplicatItems.Remove(delitedAI);
+
+            dgApplicat.DataSource = applicatEditContext.Applicat.ApplicatItems;
+            dgApplicat.Refresh();
+        }
+
+        private void ApplicatItemsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgApplicat_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ApplicateEditForm applicateEditForm = new ApplicateEditForm(applicatEditContext, e.RowIndex);
+            applicateEditForm.ShowDialog();
         }
     }
 }

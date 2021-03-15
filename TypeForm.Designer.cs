@@ -51,7 +51,7 @@ namespace NiiarGeneration
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btCansel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btSave);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgType);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 334);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 309);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -66,7 +66,7 @@ namespace NiiarGeneration
             this.btDelete.Dock = System.Windows.Forms.DockStyle.Left;
             this.btDelete.Location = new System.Drawing.Point(113, 310);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(113, 22);
+            this.btDelete.Size = new System.Drawing.Size(113, 0);
             this.btDelete.TabIndex = 30;
             this.btDelete.Text = "Удалить тип";
             this.btDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -79,7 +79,7 @@ namespace NiiarGeneration
             this.btAddItem.Dock = System.Windows.Forms.DockStyle.Left;
             this.btAddItem.Location = new System.Drawing.Point(0, 310);
             this.btAddItem.Name = "btAddItem";
-            this.btAddItem.Size = new System.Drawing.Size(113, 22);
+            this.btAddItem.Size = new System.Drawing.Size(113, 0);
             this.btAddItem.TabIndex = 29;
             this.btAddItem.Text = "Добавить технику";
             this.btAddItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -92,7 +92,7 @@ namespace NiiarGeneration
             this.btCansel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btCansel.Location = new System.Drawing.Point(624, 310);
             this.btCansel.Name = "btCansel";
-            this.btCansel.Size = new System.Drawing.Size(87, 22);
+            this.btCansel.Size = new System.Drawing.Size(87, 0);
             this.btCansel.TabIndex = 28;
             this.btCansel.Text = "Отмена";
             this.btCansel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -105,7 +105,7 @@ namespace NiiarGeneration
             this.btSave.Dock = System.Windows.Forms.DockStyle.Right;
             this.btSave.Location = new System.Drawing.Point(711, 310);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(87, 22);
+            this.btSave.Size = new System.Drawing.Size(87, 0);
             this.btSave.TabIndex = 27;
             this.btSave.Text = "Сохранить";
             this.btSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -121,6 +121,7 @@ namespace NiiarGeneration
             this.dgType.Name = "dgType";
             this.dgType.Size = new System.Drawing.Size(798, 310);
             this.dgType.TabIndex = 24;
+            this.dgType.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgType_CellContentClick);
             this.dgType.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgType_CellContentClick);
             // 
             // TypeForm
@@ -130,7 +131,8 @@ namespace NiiarGeneration
             this.ClientSize = new System.Drawing.Size(800, 334);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "TypeForm";
-            this.Text = "TypeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Справочник типов заявки";
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();

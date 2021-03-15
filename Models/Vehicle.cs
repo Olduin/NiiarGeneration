@@ -15,9 +15,11 @@ namespace NiiarGeneration.Models
         [Key]
         public int Id { get; set; }
 
-        
+        [Display(Name = "Наименование техники")]
         public string Name { get; set; }
+
         [MaxLength(8)]
+        [Display(Name = "Гос. Номер")]
         public string state_Number { get; set; }
 
         public override string ToString()

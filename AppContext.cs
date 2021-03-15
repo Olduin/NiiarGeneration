@@ -16,17 +16,17 @@ namespace NiiarGeneration
         
         public AppContext(Repository repository)
         {
+            ShowTitleForm();
+        
             this.repository = repository;
-            //currentForm = new TitleForm() ;
-            //if (currentForm.DialogResult == DialogResult.OK)
-            //{
-                
-                
-            //}
+
             currentForm = new ApplicateListForm(repository);
 
             currentForm.FormClosed += OnFormClosed;
             currentForm.Show();
+        
+                  
+            
             
         }
 
@@ -42,6 +42,17 @@ namespace NiiarGeneration
         private void OnFormClosed(object sender, EventArgs e)
         {
             ExitThread();
+        }
+
+        private void ShowTitleForm()
+        {
+            Form TitleForm = new TitleForm();
+            TitleForm.ShowDialog();
+
+          
+            TitleForm.Close();
+
+       
         }
 
     }

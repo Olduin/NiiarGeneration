@@ -34,8 +34,10 @@
             this.btAddApplicat = new System.Windows.Forms.ToolStripButton();
             this.btVehicles = new System.Windows.Forms.ToolStripButton();
             this.btType = new System.Windows.Forms.ToolStripButton();
-            this.cbType = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgApplications)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -49,7 +51,7 @@
             this.dgApplications.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgApplications.Location = new System.Drawing.Point(0, 0);
             this.dgApplications.Name = "dgApplications";
-            this.dgApplications.Size = new System.Drawing.Size(988, 502);
+            this.dgApplications.Size = new System.Drawing.Size(738, 375);
             this.dgApplications.TabIndex = 0;
             this.dgApplications.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplications_CellContentClick);
             // 
@@ -60,10 +62,10 @@
             this.btAddApplicat,
             this.btVehicles,
             this.btType,
-            this.cbType});
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(576, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(443, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -94,12 +96,15 @@
             this.btType.Text = "Справочник типов";
             this.btType.Click += new System.EventHandler(this.btType_Click);
             // 
-            // cbType
+            // toolStripButton1
             // 
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(121, 25);
-            this.cbType.Text = "Тип";
-            this.cbType.Click += new System.EventHandler(this.cbType_Click);
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripContainer1
             // 
@@ -108,25 +113,28 @@
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgApplications);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(988, 502);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(738, 375);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(988, 527);
+            this.toolStripContainer1.Size = new System.Drawing.Size(738, 400);
             this.toolStripContainer1.TabIndex = 3;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.toolStrip1);
+            this.toolStripContainer1.TopToolStripPanel.Click += new System.EventHandler(this.toolStripContainer1_TopToolStripPanel_Click);
             // 
             // ApplicateListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 527);
+            this.ClientSize = new System.Drawing.Size(738, 400);
             this.Controls.Add(this.toolStripContainer1);
+            this.HelpButton = true;
             this.Name = "ApplicateListForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заявки";
             ((System.ComponentModel.ISupportInitialize)(this.dgApplications)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -147,7 +155,9 @@
         private System.Windows.Forms.ToolStripButton btAddApplicat;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.ToolStripButton btVehicles;
-        private System.Windows.Forms.ToolStripComboBox cbType;
         private System.Windows.Forms.ToolStripButton btType;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

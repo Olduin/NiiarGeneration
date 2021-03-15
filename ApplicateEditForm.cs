@@ -21,6 +21,7 @@ namespace NiiarGeneration
         public ApplicateEditForm(ApplicatEditContext applicationEditContext, int rowIndex)
         {
             this.applicationEditContext = applicationEditContext;
+                        
             this.applicatItem = applicationEditContext.Applicat.ApplicatItems[rowIndex] ;
             InitializeComponent();
 

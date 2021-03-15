@@ -90,7 +90,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(762, 347);
+            this.btSave.Location = new System.Drawing.Point(669, 347);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(87, 23);
             this.btSave.TabIndex = 8;
@@ -100,7 +100,7 @@
             // 
             // btCansel
             // 
-            this.btCansel.Location = new System.Drawing.Point(669, 347);
+            this.btCansel.Location = new System.Drawing.Point(762, 347);
             this.btCansel.Name = "btCansel";
             this.btCansel.Size = new System.Drawing.Size(87, 23);
             this.btCansel.TabIndex = 9;
@@ -132,7 +132,8 @@
             this.dgApplicat.Name = "dgApplicat";
             this.dgApplicat.Size = new System.Drawing.Size(849, 294);
             this.dgApplicat.TabIndex = 12;
-            this.dgApplicat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplicat_CellContentClick);
+            this.dgApplicat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplicat_CellClick);
+           
             // 
             // btAddItem
             // 
@@ -172,8 +173,10 @@
             this.Controls.Add(this.lbTypeApplicat);
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.tbId);
+            this.HelpButton = true;
             this.Name = "ApplicatItemsForm";
-            this.Text = "EditApplicat";
+            this.Text = "Строки заявки";
+            this.Load += new System.EventHandler(this.ApplicatItemsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgApplicat)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

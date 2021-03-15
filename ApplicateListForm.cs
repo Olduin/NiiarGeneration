@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace NiiarGeneration
             InitializeComponent();
             this.dgApplications.DataSource = repository.ApplicatGetList();
 
-            LoadCbTypes();
+            //LoadCbTypes();
             
         }
 
@@ -56,7 +57,7 @@ namespace NiiarGeneration
             ApplicatEditContext applicatEditContext = new ApplicatEditContext(repository);
 
             applicatEditContext.Applicat = new Applicat();
-                       
+                                   
             using (ApplicatItemsForm ApplicatItemsForm = new ApplicatItemsForm(applicatEditContext))
             {
                 ApplicatItemsForm.ShowDialog();
@@ -85,14 +86,14 @@ namespace NiiarGeneration
             }
         }
 
-        private void LoadCbTypes()
+       /* private void LoadCbTypes()
         {
             ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
-            cbType.SelectedIndex = -1;
+           //cbType.SelectedIndex = -1;
             cbType.ComboBox.DisplayMember = "Name";
             cbType.ComboBox.ValueMember = "Id";
             cbType.ComboBox.DataSource = applicationEditContext.Types;
-        }
+        }*/
 
         private void cbType_Click(object sender, EventArgs e)
         {
@@ -116,18 +117,30 @@ namespace NiiarGeneration
             }
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            // Help.ShowHelp(helpProvider1, "help.html");
+            
+            System.Diagnostics.Process.Start("file:///C:/Users/oldui/source/repos/NiiarGeneration/Myhelp.html");
 
+        }
 
+        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+        {
 
-        /* private void OpenApplicatEditForm(ApplicatItem applicatItem)
-         {
-             ApplicationEditContext applicationEditContext = new ApplicationEditContext
-             {
-                 ApplicatItems = applicatItem;}
-                 //Vehincles = 
-                 //VehinlesRepository.GetVehincles();
-             }
-         */
+        }
+
+        private void cbType_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        /*private void cbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
+            long nType = cbType.SelectedIndex;
+            this.dgApplications.DataSource = repository.ApplicatsGet(nType) ;
+        }*/
     }
 }
 

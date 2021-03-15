@@ -60,7 +60,15 @@ namespace NiiarGeneration
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            //typeContext.Types.Remove();
+            long delitedRowId = Convert.ToInt64(dgType.CurrentRow.Cells[0].Value);
+
+
+           TypeApplicat delitedTp = typeContext.Types.FirstOrDefault(tp => tp.Id == delitedRowId);
+
+            typeContext.Types.Remove(delitedTp);
+
+            dgType.DataSource = typeContext.Types;
+            dgType.Refresh();
         }
     }
 }

@@ -251,8 +251,8 @@ namespace NiiarGeneration
             this.Controls.Add(this.tbStateNumber);
             this.Controls.Add(this.tbIdItem);
             this.Name = "ApplicateEditForm";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Text = "ApplicateEditForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Text = "Редактирование строки";
             this.ResumeLayout(false);
             this.PerformLayout();
 

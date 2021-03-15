@@ -15,6 +15,16 @@ namespace NiiarGeneration
 
         public List<TypeApplicat> Types { get { return repository.GetTypesList(); } }
 
+        private List<ApplicatItem> deletedItems;
+
+        public void DeleteItem(ApplicatItem applicatItem)
+        {
+            deletedItems.Add(applicatItem);
+            Applicat.ApplicatItems.Remove(applicatItem);
+        }
+
+        
+
         private Repository repository;
 
         public ApplicatEditContext(Repository repository)

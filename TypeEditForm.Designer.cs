@@ -84,6 +84,7 @@ namespace NiiarGeneration
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbName);
             this.Name = "TypeEditForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Редактирование типа";
             this.ResumeLayout(false);
             this.PerformLayout();

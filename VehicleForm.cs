@@ -53,16 +53,7 @@ namespace NiiarGeneration
         }
 
         
-        private void btDelete_Click_1(object sender, EventArgs e)
-        {
-            this.vehicleEditContext = vehicleEditContext;
-            /*DataGridViewRow row = dgVehicle.Rows[c.RowIndex];
-
-            vehicleEditContext.Vehincles.Remove(vehicleEditContext.Vehincles[ Convert.ToInt32(row)]);
-             
-              // vehicleEditContext.reposi //repository.DeleteVehile(vehicleEditContext, Convert.ToInt32(currentVehicle));
-            */
-        }
+        
 
         private void LoadData()
         {
@@ -91,10 +82,24 @@ namespace NiiarGeneration
 
         }
 
-       /* private void btDelete_Click(object sender, EventArgs e)
+        private void btDelete_Click(object sender, EventArgs e)
         {
-            this.Click += btDelete_(this.btDelete_Click);
-        }*/
-    }
+                long delitedRowId = Convert.ToInt64(dgVehicle.CurrentRow.Cells[0].Value);
+
+
+                Vehicle delitedVh = vehicleEditContext.Vehincles.FirstOrDefault(vh => vh.Id == delitedRowId);
+
+                vehicleEditContext.Vehincles.Remove(delitedVh);
+
+                dgVehicle.DataSource = vehicleEditContext.Vehincles;
+                dgVehicle.Refresh();
+            }
+        }
+
+        /* private void btDelete_Click(object sender, EventArgs e)
+         {
+             this.Click += btDelete_(this.btDelete_Click);
+         }*/
+    
 
 }
