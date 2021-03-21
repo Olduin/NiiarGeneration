@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicatItemsForm));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbId = new System.Windows.Forms.TextBox();
             this.lbId = new System.Windows.Forms.Label();
@@ -133,7 +134,6 @@
             this.dgApplicat.Size = new System.Drawing.Size(849, 294);
             this.dgApplicat.TabIndex = 12;
             this.dgApplicat.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgApplicat_CellClick);
-           
             // 
             // btAddItem
             // 
@@ -173,7 +173,9 @@
             this.Controls.Add(this.lbTypeApplicat);
             this.Controls.Add(this.lbId);
             this.Controls.Add(this.tbId);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ApplicatItemsForm";
             this.Text = "Строки заявки";
             this.Load += new System.EventHandler(this.ApplicatItemsForm_Load);

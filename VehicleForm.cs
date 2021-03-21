@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NiiarGeneration.Models;
+using NiiarGeneration.ViewModel;
 
 namespace NiiarGeneration
 {
     public partial class VehicleForm : Form
     {
         private VehicleEditContext vehicleEditContext;
+
      
         int currentVehicle;
 
@@ -26,7 +28,7 @@ namespace NiiarGeneration
 
             bindingSource = new BindingSource(vehicleEditContext, "Vehincles");
             this.dgVehicle.DataSource = bindingSource;
-            
+
         }
 
         private void btSave_Click(object sender, EventArgs e)
@@ -51,10 +53,7 @@ namespace NiiarGeneration
             vehicleEditContext.Vehincles.Add(new Vehicle() );
             bindingSource.ResetBindings(false);            
         }
-
-        
-        
-
+                  
         private void LoadData()
         {
 

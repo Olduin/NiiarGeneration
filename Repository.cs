@@ -35,11 +35,11 @@ namespace NiiarGeneration
                 .AsNoTracking().FirstOrDefault(ac => ac.Id == id);
         }
 
-          public List<Applicat> ApplicatsGet(long typeApplicat)
-          {
-            return applicatDbContext.Applicats.Where(ap => ap.Type.Id == typeApplicat).ToList() ;
+        public List<Applicat> ApplicatsGet(long typeApplicat)
+        {
+          return applicatDbContext.Applicats.Where(ap => ap.Type.Id == typeApplicat).ToList() ;
 
-          }
+        }
           
 
         public List<ApplicatItem> GetApplicatItems()
@@ -52,9 +52,29 @@ namespace NiiarGeneration
             return applicatDbContext.Vehincles.ToList();
         }
 
+        public List<TypeWork> TypeWorkGetList()
+        {
+            return applicatDbContext.TypeWorks.ToList();
+        }
+
+        public List<Customer> CustomerGetList()
+        {
+            return applicatDbContext.Customers.ToList();
+        }
+
         public Vehicle GetVehicle(long id)
         {
             return applicatDbContext.Vehincles.FirstOrDefault(vh => vh.Id == id);
+        }
+
+        public TypeWork GetTypeWork(long id)
+        {
+            return applicatDbContext.TypeWorks.FirstOrDefault(tw => tw.Id == id);
+        }
+
+        public Customer GetCustomer(long id)
+        {
+            return applicatDbContext.Customers.FirstOrDefault(vh => vh.Id == id);
         }
 
         public List<TypeApplicat> GetTypesList()

@@ -5,26 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace NiiarGeneration.Models
 {
     [Table ("Applicates")]    
    
-
-        public class Applicat
-    {
+    public class Applicat
+    { 
         [Key]
-        [Display(Name = "№")]
+        [DisplayName("№")]
         public int Id { get; set; }
 
-        [Display(Name = "Дата")]
+        [DisplayName("Дата")]
         public DateTime Date{ get; set; }
 
-        [Display(Name = "Тип заявки")]
+        [DisplayName("Тип заявки")]
         public virtual TypeApplicat Type { get; set; }
 
-        [Display(Name = "Список")]
+        [DisplayName("Список")]
         public virtual List<ApplicatItem> ApplicatItems{ get; set; }
-        
+
+        public override string ToString()
+        {
+            return Id.ToString() ;
+        }
     }   
 }

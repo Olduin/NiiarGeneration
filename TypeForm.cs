@@ -70,5 +70,10 @@ namespace NiiarGeneration
             dgType.DataSource = typeContext.Types;
             dgType.Refresh();
         }
+
+        private void btSave_Click_1(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

@@ -7,17 +7,15 @@ using NiiarGeneration.Models;
 
 namespace NiiarGeneration
 {
-    public class VehicleEditContext
+    public class CustomerEditContext
     {
         private Repository repository;
 
-        public List<Vehicle> Vehincles { get; set; }
+        public List<Customer> Customers { get; set; }
 
-        public VehicleEditContext(Repository repository)
+        public CustomerEditContext(Repository repository)
         {
             this.repository = repository;
         }
-               
-        
     }
 }

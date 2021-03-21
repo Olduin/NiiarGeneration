@@ -16,23 +16,27 @@ namespace NiiarGeneration.Models
         [Key]
         [DisplayName ("№п.п.")]
         public int Id { get; set; }
-               
+
+        [DisplayName("Заявка №")]
         public Applicat Applicat { get; set; }
 
-        [DisplayName("Ответсвенный от заказчика")]
-        public string Responsible_Customer { get; set; }
+        [DisplayName("Заявитель")]
+        public virtual Customer Customer { get; set; }
 
         [DisplayName("Наименование транспорта и спецтехники")]
         public virtual Vehicle Vehicle { get; set; }
 
-        [DisplayName("Описание проводимых работ")]
-        public string Description_Work { get; set; }
+        [DisplayName("Вид проводимых работ")]
+        public virtual TypeWork TypeWork { get; set; }
+
+        [DisplayName("Дополнительное описание")]
+        public string Additional_description { get; set; }
 
         [DisplayName("Время подачи техники")]
         public DateTime? Time_Of_Filing { get; set; }
 
-        [DisplayName("Продолжительность использования")]
-        public int Duration_Of_Use { get; set; }
+        [DisplayName("Время окончания работы")]
+        public DateTime? End_time_of_work { get; set; }
 
         [DisplayName("Адрес подачи техники")]
         public string Delivery_Address { get; set; }

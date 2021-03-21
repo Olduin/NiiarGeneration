@@ -53,17 +53,18 @@ namespace NiiarGeneration
         private void LoadData()
         {
             tbIdItem.Text = applicatItem.Id.ToString();
-            
-            tbResponsibleCustomer.Text = applicatItem.Responsible_Customer;
-            tbDescriptionWork.Text = applicatItem.Description_Work;
-                        
+                                       
             tbDeliveryAddress.Text = applicatItem.Delivery_Address;
-            tbDuration_Of_Use.Text = applicatItem.Duration_Of_Use.ToString();
-
+           
             cbVehicle.SelectedText = applicatItem.Vehicle?.Name;                    
             cbVehicle.DisplayMember = "Name";
             cbVehicle.ValueMember = "id";
             cbVehicle.DataSource = applicationEditContext.Vehincles;
+
+            cbCustomer.SelectedText = applicatItem.Customer?.Name;
+            cbCustomer.DisplayMember = "Name";
+            cbCustomer.ValueMember = "id";
+            cbCustomer.DataSource = applicationEditContext.Customers;
 
             tbStateNumber.Text = applicatItem.Vehicle?.state_Number;
 
@@ -82,15 +83,19 @@ namespace NiiarGeneration
 
         private void SaveData()
         {
-            applicatItem.Responsible_Customer = tbResponsibleCustomer.Text;
-            applicatItem.Description_Work = tbResponsibleCustomer.Text;
+            applicatItem.Customer = cbCustomer.SelectedItem as Customer;
+            applicatItem.TypeWork= cbCustomer.SelectedItem as TypeWork;
             applicatItem.Vehicle = cbVehicle.SelectedItem as Vehicle;
             //applicatItem.Vehicle.state_Number 
             applicatItem.Time_Of_Filing = dtTime_Of_Filing.Value;
-            applicatItem.Duration_Of_Use = Convert.ToInt32(tbDuration_Of_Use.Text);
+            applicatItem.End_time_of_work = dtEnd_time_of_work.Value;
             applicatItem.Delivery_Address = tbDeliveryAddress.Text;
         }
-        
+
+        private void ApplicateEditForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

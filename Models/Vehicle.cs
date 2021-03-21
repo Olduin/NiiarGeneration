@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel;
 
 namespace NiiarGeneration.Models
 {
@@ -15,11 +16,11 @@ namespace NiiarGeneration.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Наименование техники")]
+        [DisplayName("Наименование техники")]
         public string Name { get; set; }
 
         [MaxLength(8)]
-        [Display(Name = "Гос. Номер")]
+        [DisplayName("Гос. Номер")]
         public string state_Number { get; set; }
 
         public override string ToString()

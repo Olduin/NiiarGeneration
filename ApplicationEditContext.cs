@@ -15,6 +15,10 @@ namespace NiiarGeneration
 
         public List<TypeApplicat> Types { get { return repository.GetTypesList(); } }
 
+        public List<Customer> Customers { get { return repository.CustomerGetList(); } }
+
+        public List<TypeWork> TypeWorks { get { return repository.TypeWorkGetList(); } }
+
         private List<ApplicatItem> deletedItems;
 
         public void DeleteItem(ApplicatItem applicatItem)

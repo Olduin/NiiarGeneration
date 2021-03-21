@@ -86,14 +86,14 @@ namespace NiiarGeneration
             }
         }
 
-       /* private void LoadCbTypes()
-        {
-            ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
-           //cbType.SelectedIndex = -1;
-            cbType.ComboBox.DisplayMember = "Name";
-            cbType.ComboBox.ValueMember = "Id";
-            cbType.ComboBox.DataSource = applicationEditContext.Types;
-        }*/
+        /* private void LoadCbTypes()
+         {
+             ApplicatEditContext applicationEditContext = new ApplicatEditContext(repository);
+            //cbType.SelectedIndex = -1;
+             cbType.ComboBox.DisplayMember = "Name";
+             cbType.ComboBox.ValueMember = "Id";
+             cbType.ComboBox.DataSource = applicationEditContext.Types;
+         }*/
 
         private void cbType_Click(object sender, EventArgs e)
         {
@@ -125,14 +125,37 @@ namespace NiiarGeneration
 
         }
 
-        private void toolStripContainer1_TopToolStripPanel_Click(object sender, EventArgs e)
+          
+        private void btTypeWork_Click(object sender, EventArgs e)
         {
+            TypeWorkContext typeWorkContext = new TypeWorkContext(repository);
+            typeWorkContext.TypeWorks = repository.TypeWorkGetList();
 
+            using (TypeWorkForm typeWorkForm = new TypeWorkForm(typeWorkContext))
+            {
+                typeWorkForm.ShowDialog();
+
+                if (typeWorkForm.DialogResult == DialogResult.OK)
+                {
+                    // repository.ty
+                }
+            }
         }
 
-        private void cbType_Click_1(object sender, EventArgs e)
+        private void btCustomer_Click(object sender, EventArgs e)
         {
+            CustomerEditContext customerEditContext = new CustomerEditContext(repository);
+            customerEditContext.Customers = repository.CustomerGetList();
 
+            using (CustomerForm customerForm = new CustomerForm(customerEditContext))
+            {
+                customerForm.ShowDialog();
+
+                if (customerForm.DialogResult == DialogResult.OK)
+                {
+                    // repository.ty
+                }
+            }
         }
 
         /*private void cbType_SelectedIndexChanged(object sender, EventArgs e)

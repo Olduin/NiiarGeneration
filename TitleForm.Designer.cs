@@ -49,7 +49,7 @@ namespace NiiarGeneration
             // 
             // btForward
             // 
-            this.btForward.Location = new System.Drawing.Point(683, 443);
+            this.btForward.Location = new System.Drawing.Point(358, 443);
             this.btForward.Name = "btForward";
             this.btForward.Size = new System.Drawing.Size(87, 23);
             this.btForward.TabIndex = 1;

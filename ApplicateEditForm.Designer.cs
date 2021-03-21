@@ -29,11 +29,9 @@ namespace NiiarGeneration
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicateEditForm));
             this.tbIdItem = new System.Windows.Forms.TextBox();
             this.tbStateNumber = new System.Windows.Forms.TextBox();
-            this.tbResponsibleCustomer = new System.Windows.Forms.TextBox();
-            this.tbDescriptionWork = new System.Windows.Forms.TextBox();
-            this.tbDuration_Of_Use = new System.Windows.Forms.TextBox();
             this.tbDeliveryAddress = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,6 +45,9 @@ namespace NiiarGeneration
             this.dtTime_Of_Filing = new System.Windows.Forms.DateTimePicker();
             this.btCansel = new System.Windows.Forms.Button();
             this.btSave = new System.Windows.Forms.Button();
+            this.cbCustomer = new System.Windows.Forms.ComboBox();
+            this.cbTypeWork = new System.Windows.Forms.ComboBox();
+            this.dtEnd_time_of_work = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // tbIdItem
@@ -65,30 +66,6 @@ namespace NiiarGeneration
             this.tbStateNumber.Size = new System.Drawing.Size(427, 20);
             this.tbStateNumber.TabIndex = 1;
             this.tbStateNumber.Text = "--------";
-            // 
-            // tbResponsibleCustomer
-            // 
-            this.tbResponsibleCustomer.Location = new System.Drawing.Point(166, 64);
-            this.tbResponsibleCustomer.Name = "tbResponsibleCustomer";
-            this.tbResponsibleCustomer.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbResponsibleCustomer.Size = new System.Drawing.Size(427, 20);
-            this.tbResponsibleCustomer.TabIndex = 2;
-            // 
-            // tbDescriptionWork
-            // 
-            this.tbDescriptionWork.Location = new System.Drawing.Point(166, 116);
-            this.tbDescriptionWork.Name = "tbDescriptionWork";
-            this.tbDescriptionWork.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbDescriptionWork.Size = new System.Drawing.Size(427, 20);
-            this.tbDescriptionWork.TabIndex = 4;
-            // 
-            // tbDuration_Of_Use
-            // 
-            this.tbDuration_Of_Use.Location = new System.Drawing.Point(166, 168);
-            this.tbDuration_Of_Use.Name = "tbDuration_Of_Use";
-            this.tbDuration_Of_Use.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbDuration_Of_Use.Size = new System.Drawing.Size(138, 20);
-            this.tbDuration_Of_Use.TabIndex = 6;
             // 
             // tbDeliveryAddress
             // 
@@ -123,18 +100,18 @@ namespace NiiarGeneration
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 67);
+            this.label3.Location = new System.Drawing.Point(99, 67);
             this.label3.Name = "label3";
             this.label3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label3.Size = new System.Drawing.Size(156, 13);
+            this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Ответственный от заказчика";
+            this.label3.Text = "Заявитель";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 93);
+            this.label4.Location = new System.Drawing.Point(16, 94);
             this.label4.MaximumSize = new System.Drawing.Size(200, 0);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -227,11 +204,41 @@ namespace NiiarGeneration
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
+            // cbCustomer
+            // 
+            this.cbCustomer.FormattingEnabled = true;
+            this.cbCustomer.Location = new System.Drawing.Point(167, 64);
+            this.cbCustomer.Name = "cbCustomer";
+            this.cbCustomer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbCustomer.Size = new System.Drawing.Size(426, 21);
+            this.cbCustomer.TabIndex = 20;
+            // 
+            // cbTypeWork
+            // 
+            this.cbTypeWork.FormattingEnabled = true;
+            this.cbTypeWork.Location = new System.Drawing.Point(167, 116);
+            this.cbTypeWork.Name = "cbTypeWork";
+            this.cbTypeWork.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.cbTypeWork.Size = new System.Drawing.Size(426, 21);
+            this.cbTypeWork.TabIndex = 21;
+            // 
+            // dtEnd_time_of_work
+            // 
+            this.dtEnd_time_of_work.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtEnd_time_of_work.Location = new System.Drawing.Point(166, 168);
+            this.dtEnd_time_of_work.Name = "dtEnd_time_of_work";
+            this.dtEnd_time_of_work.ShowUpDown = true;
+            this.dtEnd_time_of_work.Size = new System.Drawing.Size(138, 20);
+            this.dtEnd_time_of_work.TabIndex = 22;
+            // 
             // ApplicateEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(602, 251);
+            this.Controls.Add(this.dtEnd_time_of_work);
+            this.Controls.Add(this.cbTypeWork);
+            this.Controls.Add(this.cbCustomer);
             this.Controls.Add(this.btCansel);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.dtTime_Of_Filing);
@@ -245,14 +252,13 @@ namespace NiiarGeneration
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbDeliveryAddress);
-            this.Controls.Add(this.tbDuration_Of_Use);
-            this.Controls.Add(this.tbDescriptionWork);
-            this.Controls.Add(this.tbResponsibleCustomer);
             this.Controls.Add(this.tbStateNumber);
             this.Controls.Add(this.tbIdItem);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ApplicateEditForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Редактирование строки";
+            this.Load += new System.EventHandler(this.ApplicateEditForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,9 +268,6 @@ namespace NiiarGeneration
 
         private System.Windows.Forms.TextBox tbIdItem;
         private System.Windows.Forms.TextBox tbStateNumber;
-        private System.Windows.Forms.TextBox tbResponsibleCustomer;
-        private System.Windows.Forms.TextBox tbDescriptionWork;
-        private System.Windows.Forms.TextBox tbDuration_Of_Use;
         private System.Windows.Forms.TextBox tbDeliveryAddress;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -278,5 +281,8 @@ namespace NiiarGeneration
         private System.Windows.Forms.DateTimePicker dtTime_Of_Filing;
         private System.Windows.Forms.Button btCansel;
         private System.Windows.Forms.Button btSave;
+        private System.Windows.Forms.ComboBox cbCustomer;
+        private System.Windows.Forms.ComboBox cbTypeWork;
+        private System.Windows.Forms.DateTimePicker dtEnd_time_of_work;
     }
 }

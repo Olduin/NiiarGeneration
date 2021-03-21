@@ -7,17 +7,15 @@ using NiiarGeneration.Models;
 
 namespace NiiarGeneration
 {
-    public class VehicleEditContext
+    public class TypeWorkContext
     {
-        private Repository repository;
+        Repository repository;
 
-        public List<Vehicle> Vehincles { get; set; }
+        public List<TypeWork> TypeWorks { get;  set; }
 
-        public VehicleEditContext(Repository repository)
+        public TypeWorkContext(Repository repository)
         {
             this.repository = repository;
         }
-               
-        
     }
 }

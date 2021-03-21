@@ -29,6 +29,7 @@ namespace NiiarGeneration
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleEditForm));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbStateNumber = new System.Windows.Forms.TextBox();
@@ -107,6 +108,7 @@ namespace NiiarGeneration
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbStateNumber);
             this.Controls.Add(this.tbName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VehicleEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Редактирование  данных о техники";

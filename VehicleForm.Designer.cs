@@ -29,6 +29,7 @@ namespace NiiarGeneration
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleForm));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.btSave = new System.Windows.Forms.Button();
             this.btDelete = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@ namespace NiiarGeneration
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btAddItem);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.btCansel);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.dgVehicle);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(693, 310);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(693, 285);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
@@ -66,7 +67,7 @@ namespace NiiarGeneration
             this.btSave.Dock = System.Windows.Forms.DockStyle.Right;
             this.btSave.Location = new System.Drawing.Point(517, 284);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(87, 24);
+            this.btSave.Size = new System.Drawing.Size(87, 0);
             this.btSave.TabIndex = 31;
             this.btSave.Text = "Сохранить";
             this.btSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -78,7 +79,7 @@ namespace NiiarGeneration
             this.btDelete.Dock = System.Windows.Forms.DockStyle.Left;
             this.btDelete.Location = new System.Drawing.Point(113, 284);
             this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(113, 24);
+            this.btDelete.Size = new System.Drawing.Size(113, 0);
             this.btDelete.TabIndex = 30;
             this.btDelete.Text = "Списать технику";
             this.btDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -91,7 +92,7 @@ namespace NiiarGeneration
             this.btAddItem.Dock = System.Windows.Forms.DockStyle.Left;
             this.btAddItem.Location = new System.Drawing.Point(0, 284);
             this.btAddItem.Name = "btAddItem";
-            this.btAddItem.Size = new System.Drawing.Size(113, 24);
+            this.btAddItem.Size = new System.Drawing.Size(113, 0);
             this.btAddItem.TabIndex = 29;
             this.btAddItem.Text = "Добавить технику";
             this.btAddItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -103,7 +104,7 @@ namespace NiiarGeneration
             this.btCansel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btCansel.Location = new System.Drawing.Point(604, 284);
             this.btCansel.Name = "btCansel";
-            this.btCansel.Size = new System.Drawing.Size(87, 24);
+            this.btCansel.Size = new System.Drawing.Size(87, 0);
             this.btCansel.TabIndex = 28;
             this.btCansel.Text = "Отмена";
             this.btCansel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -129,6 +130,7 @@ namespace NiiarGeneration
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(693, 310);
             this.Controls.Add(this.toolStripContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VehicleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочник техники";

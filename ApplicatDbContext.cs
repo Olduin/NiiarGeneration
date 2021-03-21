@@ -20,5 +20,7 @@ namespace NiiarGeneration
         public DbSet<Vehicle> Vehincles { get; set; }
         public DbSet<Applicat> Applicats { get; set; }
         public DbSet<ApplicatItem> ApplicatItems { get; set; }
+        public DbSet<TypeWork> TypeWorks { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }
